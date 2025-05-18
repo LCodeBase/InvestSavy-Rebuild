@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestSavy - Portal de Notícias Financeiras</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="/" class="logo">InvestSavy</a>
+        <nav class="nav-menu">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/noticias" class="nav-link">Notícias</a>
+            <a href="/mercados" class="nav-link">Mercados</a>
+            <a href="/economia" class="nav-link">Economia</a>
+            <a href="/analises" class="nav-link">Análises</a>
+            <a href="/sobre" class="nav-link">Sobre Nós</a>
+            <a href="/contato" class="nav-link">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Mercados em Tempo Real -->
+    <div class="markets-bar">
+        <div class="market-item">
+            <span>Ibovespa</span>
+            <span class="market-value">120.000</span>
+            <span class="market-change positive">+1.2%</span>
+        </div>
+        <div class="market-item">
+            <span>Dólar</span>
+            <span class="market-value">5.20</span>
+            <span class="market-change negative">-0.5%</span>
+        </div>
+        <div class="market-item">
+            <span>Bitcoin</span>
+            <span class="market-value">45.000</span>
+            <span class="market-change positive">+2.3%</span>
+        </div>
+        <div class="market-item">
+            <span>Petróleo</span>
+            <span class="market-value">75.50</span>
+            <span class="market-change positive">+0.8%</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="assets/images/hero-image.jpg" alt="Manchete Principal" class="hero-image">
+            <h1 class="hero-title">Mercado financeiro reage positivamente às novas medidas econômicas</h1>
+            <p class="hero-subtitle">Análise completa do impacto das recentes decisões do Banco Central no mercado brasileiro</p>
+            <a href="/noticia/mercado-reage-medidas-economicas" class="newsletter-button">Leia mais</a>
+        </div>
+    </section>
+
+    <!-- Grid de Notícias -->
+    <section class="news-grid">
+        <!-- Notícia 1 -->
+        <article class="news-card">
+            <img src="assets/images/news1.jpg" alt="Notícia 1" class="news-image">
+            <div class="news-content">
+                <span class="news-category">Economia</span>
+                <h2 class="news-title">Inflação registra queda em janeiro, abaixo das expectativas</h2>
+                <p>Dados do IPCA mostram desaceleração nos preços, aliviando pressão sobre o Banco Central</p>
+            </div>
+        </article>
+
+        <!-- Notícia 2 -->
+        <article class="news-card">
+            <img src="assets/images/news2.jpg" alt="Notícia 2" class="news-image">
+            <div class="news-content">
+                <span class="news-category">Mercados</span>
+                <h2 class="news-title">Ações de tecnologia lideram ganhos na B3</h2>
+                <p>Setor registra alta de 3% impulsionado por resultados positivos das empresas</p>
+            </div>
+        </article>
+
+        <!-- Notícia 3 -->
+        <article class="news-card">
+            <img src="assets/images/news3.jpg" alt="Notícia 3" class="news-image">
+            <div class="news-content">
+                <span class="news-category">Análises</span>
+                <h2 class="news-title">Especialistas apontam oportunidades em setores específicos</h2>
+                <p>Análise detalhada dos setores mais promissores para investimentos em 2024</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Receba análises exclusivas direto no seu e-mail</h2>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="newsletter-button">Inscrever-se</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o InvestSavy</h3>
+                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="/termos">Termos de Uso</a></li>
+                    <li><a href="/privacidade">Política de Privacidade</a></li>
+                    <li><a href="/contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/markets.js"></script>
+</body>
+</html>

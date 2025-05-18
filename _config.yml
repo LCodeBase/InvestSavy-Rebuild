@@ -1,0 +1,66 @@
+# Configurações do Site
+title: InvestSavy
+description: Portal líder em notícias financeiras e análises de mercado
+baseurl: ""
+url: "https://investsavy.com.br"
+
+# Configurações de Build
+markdown: kramdown
+permalink: /:categories/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Configurações de Coleções
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:title/
+
+# Configurações de Categorias
+categories:
+  - economia
+  - mercados
+  - analises
+  - empresas
+  - setor-publico
+  - global
+
+# Configurações de Layout
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Equipe InvestSavy"
+      comments: true
+
+# Configurações de Exclusão
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
+  - README.md
+  - LICENSE
+
+# Configurações de SASS
+sass:
+  style: compressed
+
+# Configurações de SEO
+seo:
+  title: InvestSavy - Portal de Notícias Financeiras
+  description: Notícias financeiras, análises de mercado e cotações em tempo real
+  keywords: investimentos, finanças, mercado, economia, bolsa de valores
+  author: InvestSavy
+  twitter:
+    username: @investsavy
+    card: summary_large_image
+
+# Configurações de servidor
+port: 4000
+host: localhost

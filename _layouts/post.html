@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - InvestSavy</title>
+    <meta name="description" content="{{ page.excerpt | strip_html }}">
+
+    <!-- SEO Tags -->
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.excerpt | strip_html }}">
+    <meta property="og:image" content="{{ page.image | absolute_url }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="/" class="header__logo">
+                    <img src="/assets/images/logo.svg" alt="InvestSavy">
+                </a>
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/noticias">Notícias</a></li>
+                        <li><a href="/mercados">Mercados</a></li>
+                        <li><a href="/economia">Economia</a></li>
+                        <li><a href="/analises">Análises</a></li>
+                        <li><a href="/sobre">Sobre Nós</a></li>
+                        <li><a href="/contato">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="post">
+        <article class="container">
+            <header class="post__header">
+                <div class="post__meta">
+                    <span class="post__category">{{ page.categories | first }}</span>
+                    <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}">
+                        {{ page.date | date: "%d/%m/%Y" }}
+                    </time>
+                </div>
+                <h1 class="post__title">{{ page.title }}</h1>
+                <div class="post__author">
+                    <img src="/assets/images/authors/{{ page.author | slugify }}.jpg" alt="{{ page.author }}" class="post__author-image">
+                    <span class="post__author-name">{{ page.author }}</span>
+                </div>
+            </header>
+
+            <div class="post__image">
+                <img src="{{ page.image }}" alt="{{ page.title }}">
+            </div>
+
+            <div class="post__content">
+                {{ content }}
+            </div>
+
+            <footer class="post__footer">
+                <div class="post__tags">
+                    {% for tag in page.tags %}
+                    <a href="/tags/{{ tag | slugify }}" class="post__tag">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+
+                <div class="post__share">
+                    <h3>Compartilhe este artigo</h3>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ page.url | absolute_url }}" target="_blank" rel="noopener" class="share-button share-button--twitter">
+                            Twitter
+                        </a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title }}" target="_blank" rel="noopener" class="share-button share-button--linkedin">
+                            LinkedIn
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" rel="noopener" class="share-button share-button--facebook">
+                            Facebook
+                        </a>
+                    </div>
+                </div>
+
+                <div class="post__related">
+                    <h3>Artigos Relacionados</h3>
+                    <div class="related-posts">
+                        {% assign related_posts = site.posts | where_exp:"post","post.categories contains page.categories[0]" | where_exp:"post","post.url != page.url" | limit:3 %}
+                        {% for post in related_posts %}
+                        <article class="related-post">
+                            <a href="{{ post.url }}">
+                                <img src="{{ post.image }}" alt="{{ post.title }}" class="related-post__image">
+                                <h4 class="related-post__title">{{ post.title }}</h4>
+                            </a>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <img src="/assets/images/logo-white.svg" alt="InvestSavy" class="footer__logo">
+                    <p>Seu portal de notícias financeiras e análises de mercado</p>
+                </div>
+                <div class="footer__links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="/termos">Termos de Uso</a></li>
+                        <li><a href="/privacidade">Política de Privacidade</a></li>
+                        <li><a href="/contato">Fale Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="footer__social">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 InvestSavy. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

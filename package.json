@@ -1,0 +1,21 @@
+{
+  "name": "investsavy",
+  "version": "1.0.0",
+  "description": "Portal de notícias financeiras e análises de mercado",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "finanças",
+    "investimentos",
+    "notícias",
+    "mercado"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
