@@ -1,131 +1,270 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - InvestSavy</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    {% seo %}
-</head>
-<body>
-    <!-- Header Principal -->
-    <header class="header">
-        <a href="/" class="logo">InvestSavy</a>
-        <div class="header-actions">
-            <a href="/login" class="header-action">Login</a>
-            <a href="/assine" class="header-action">Assine</a>
-            <a href="/contato" class="header-action">Contato</a>
+---
+layout: default
+---
+
+<article class="post">
+    <!-- Cabeçalho do Post -->
+    <header class="post-header">
+        <div class="post-meta">
+            {% if page.categories %}
+                {% for category in page.categories %}
+                <span class="post-category">{{ category }}</span>
+                {% endfor %}
+            {% endif %}
+            <span class="post-date">{{ page.date | date: "%d de %B, %Y" }}</span>
         </div>
+        <h1 class="post-title">{{ page.title }}</h1>
+        {% if page.author %}
+        <div class="post-author">
+            <span class="author-name">{{ page.author }}</span>
+        </div>
+        {% endif %}
     </header>
 
-    <!-- Barra de Navegação Secundária -->
-    <nav class="nav-bar">
-        <ul class="nav-menu">
-            <li><a href="/mercados" class="nav-link">Mercados</a></li>
-            <li><a href="/economia" class="nav-link">Economia</a></li>
-            <li><a href="/politica" class="nav-link">Política</a></li>
-            <li><a href="/tecnologia" class="nav-link">Tecnologia</a></li>
-            <li><a href="/energia" class="nav-link">Energia</a></li>
-            <li><a href="/commodities" class="nav-link">Commodities</a></li>
-            <li><a href="/currencies" class="nav-link">Moedas</a></li>
-            <li><a href="/bonds" class="nav-link">Títulos</a></li>
-        </ul>
-        <div class="nav-search">
-            <input type="search" placeholder="Buscar...">
-            <button type="button">🔍</button>
-        </div>
-    </nav>
+    <!-- Imagem Principal -->
+    {% if page.image %}
+    <div class="post-image">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    </div>
+    {% endif %}
 
-    <!-- Mercados em Tempo Real -->
-    <div class="markets-bar">
-        <div class="market-item">
-            <span>Ibovespa</span>
-            <span class="market-value">120.000</span>
-            <span class="market-change positive">+1.2%</span>
-        </div>
-        <div class="market-item">
-            <span>Dólar</span>
-            <span class="market-value">5.20</span>
-            <span class="market-change negative">-0.5%</span>
-        </div>
-        <div class="market-item">
-            <span>Bitcoin</span>
-            <span class="market-value">45.000</span>
-            <span class="market-change positive">+2.3%</span>
-        </div>
-        <div class="market-item">
-            <span>Petróleo</span>
-            <span class="market-value">75.50</span>
-            <span class="market-change positive">+0.8%</span>
+    <!-- Conteúdo do Post -->
+    <div class="post-content">
+        {{ content }}
+    </div>
+
+    <!-- Tags do Post -->
+    {% if page.tags %}
+    <div class="post-tags">
+        {% for tag in page.tags %}
+        <span class="post-tag">{{ tag }}</span>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Compartilhamento -->
+    <div class="post-share">
+        <h3>Compartilhe esta notícia</h3>
+        <div class="share-buttons">
+            <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}" target="_blank" class="share-button twitter">Twitter</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}" target="_blank" class="share-button linkedin">LinkedIn</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank" class="share-button facebook">Facebook</a>
         </div>
     </div>
 
-    <!-- Conteúdo do Post -->
-    <main class="post-content">
-        <article class="post">
-            <header class="post-header">
-                <h1 class="post-title">{{ page.title }}</h1>
-                <div class="post-meta">
-                    <span class="post-date">{{ page.date | date: "%d/%m/%Y" }}</span>
-                    <span class="post-author">Por {{ page.author }}</span>
-                    <span class="post-category">{{ page.categories | first | capitalize }}</span>
+    <!-- Posts Relacionados -->
+    {% if page.categories %}
+    <div class="related-posts">
+        <h3>Notícias Relacionadas</h3>
+        <div class="related-posts-grid">
+            {% assign related_posts = site.posts | where_exp: "post", "post.categories contains page.categories[0]" | where_exp: "post", "post.url != page.url" | limit: 3 %}
+            {% for post in related_posts %}
+            <article class="related-post">
+                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="related-post-image">
+                <div class="related-post-content">
+                    <h4 class="related-post-title">{{ post.title }}</h4>
+                    <span class="related-post-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                    <a href="{{ post.url | relative_url }}" class="related-post-link">Ler mais</a>
                 </div>
-            </header>
-
-            {% if page.image %}
-            <img src="{{ page.image }}" alt="{{ page.title }}" class="post-image">
-            {% endif %}
-
-            <div class="post-body">
-                {{ content }}
-            </div>
-
-            <footer class="post-footer">
-                <div class="post-tags">
-                    {% for tag in page.tags %}
-                    <span class="post-tag">{{ tag }}</span>
-                    {% endfor %}
-                </div>
-            </footer>
-        </article>
-    </main>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <h2>Receba análises exclusivas direto no seu e-mail</h2>
-        <form class="newsletter-form">
-            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
-            <button type="submit" class="newsletter-button">Inscrever-se</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Sobre o InvestSavy</h3>
-                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Links Rápidos</h3>
-                <ul class="footer-links">
-                    <li><a href="/termos">Termos de Uso</a></li>
-                    <li><a href="/privacidade">Política de Privacidade</a></li>
-                    <li><a href="/contato">Fale Conosco</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Redes Sociais</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Instagram</a></li>
-                </ul>
-            </div>
+            </article>
+            {% endfor %}
         </div>
-    </footer>
+    </div>
+    {% endif %}
+</article>
 
-    <script src="/assets/js/markets.js"></script>
-</body>
-</html>
+<style>
+/* Estilos específicos para posts */
+.post {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top: 120px; /* Espaço para o header fixo */
+    background-color: #ffffff; /* Branco puro */
+    border-radius: 16px; /* Border radius mais pronunciado */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    margin-bottom: 50px;
+}
+
+.post-header {
+    margin-bottom: 2rem;
+}
+
+.post-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.post-category {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.post-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.post-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.post-author {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.post-image {
+    margin: 2rem 0;
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    background-color: #ffffff; /* Branco puro */
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-tags {
+    margin: 2rem 0;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.post-tag {
+    background-color: var(--background-secondary);
+    color: var(--text-secondary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.post-share {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+}
+
+.post-share h3 {
+    margin-bottom: 1rem;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.share-button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.share-button.twitter {
+    background-color: #1DA1F2;
+}
+
+.share-button.linkedin {
+    background-color: #0077B5;
+}
+
+.share-button.facebook {
+    background-color: #4267B2;
+}
+
+.related-posts {
+    margin-top: 4rem;
+}
+
+.related-posts h3 {
+    margin-bottom: 2rem;
+}
+
+.related-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.related-post {
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.related-post:hover {
+    transform: translateY(-5px);
+}
+
+.related-post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.related-post-content {
+    padding: 1.5rem;
+}
+
+.related-post-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.related-post-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.related-post-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .post {
+        padding: 1rem;
+        margin-top: 100px; /* Ajuste para mobile */
+    }
+
+    .post-title {
+        font-size: 2rem;
+    }
+
+    .share-buttons {
+        flex-direction: column;
+    }
+
+    .related-posts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

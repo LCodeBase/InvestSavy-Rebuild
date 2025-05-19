@@ -1,11 +1,11 @@
 ---
 layout: post
 title: 'Mercado de ações brasileiro atinge nova máxima histórica'
-date: 2024-03-20 10:00:00 -0300
+date: 2025-05-19 03:00:00 -0300
 categories: Mercados
 tags: [Ibovespa, Ações, Mercado Financeiro]
 author: Equipe InvestSavy
-image: /assets/images/posts/ibovespa-record.jpg
+image: /assets/images/posts/mercado-medidas-economicas.jpg
 excerpt: 'O Ibovespa atingiu nova máxima histórica nesta quarta-feira, impulsionado por resultados corporativos positivos e melhora no cenário macroeconômico.'
 ---
 

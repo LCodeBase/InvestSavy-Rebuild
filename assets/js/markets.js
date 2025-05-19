@@ -138,6 +138,64 @@ async function fetchStockData(symbol) {
   }
 }
 
+// Função para calcular o tempo restante
+function calculateTimeRemaining() {
+  const now = new Date()
+  const brazilTime = new Date(
+    now.toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' })
+  )
+  const day = brazilTime.getDay()
+  const hour = brazilTime.getHours()
+  const minute = brazilTime.getMinutes()
+  const isOpen = isMarketOpen()
+
+  // Se for fim de semana
+  if (day === 0 || day === 6) {
+    const nextMonday = new Date(brazilTime)
+    nextMonday.setDate(brazilTime.getDate() + (day === 0 ? 1 : 2))
+    nextMonday.setHours(10, 0, 0, 0)
+    return {
+      isOpen: false,
+      timeRemaining: nextMonday - brazilTime,
+      isWeekend: true,
+    }
+  }
+
+  // Se o mercado estiver aberto
+  if (isOpen) {
+    const closeTime = new Date(brazilTime)
+    closeTime.setHours(17, 0, 0, 0)
+    return {
+      isOpen: true,
+      timeRemaining: closeTime - brazilTime,
+      isWeekend: false,
+    }
+  }
+
+  // Se o mercado estiver fechado
+  const openTime = new Date(brazilTime)
+  if (hour < 10) {
+    // Abre hoje
+    openTime.setHours(10, 0, 0, 0)
+  } else {
+    // Abre amanhã
+    openTime.setDate(brazilTime.getDate() + 1)
+    openTime.setHours(10, 0, 0, 0)
+  }
+  return {
+    isOpen: false,
+    timeRemaining: openTime - brazilTime,
+    isWeekend: false,
+  }
+}
+
+// Função para formatar o tempo restante
+function formatTimeRemaining(ms) {
+  const hours = Math.floor(ms / (1000 * 60 * 60))
+  const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60))
+  return `${hours}h ${minutes}m`
+}
+
 // Função para atualizar o relógio e status do mercado
 function updateMarketStatus() {
   const marketStatusElement = document.querySelector('.market-status')
@@ -147,7 +205,7 @@ function updateMarketStatus() {
   const brazilTime = new Date(
     now.toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' })
   )
-  const isOpen = isMarketOpen()
+  const timeInfo = calculateTimeRemaining()
 
   const timeString = brazilTime.toLocaleTimeString('pt-BR', {
     hour: '2-digit',
@@ -163,19 +221,35 @@ function updateMarketStatus() {
     year: 'numeric',
   })
 
+  let statusText = timeInfo.isOpen ? 'Mercado Aberto' : 'Mercado Fechado'
+  let timeRemainingText = ''
+
+  if (timeInfo.isWeekend) {
+    timeRemainingText = 'Abre na próxima segunda-feira'
+  } else if (timeInfo.isOpen) {
+    timeRemainingText = `Fechamento em ${formatTimeRemaining(
+      timeInfo.timeRemaining
+    )}`
+  } else {
+    timeRemainingText = `Abertura em ${formatTimeRemaining(
+      timeInfo.timeRemaining
+    )}`
+  }
+
   marketStatusElement.innerHTML = `
     <div class="market-status-content ${
-      isOpen ? 'market-open' : 'market-closed'
+      timeInfo.isOpen ? 'market-open' : 'market-closed'
     }">
       <div class="market-status-indicator">
         <span class="status-dot"></span>
-        <span class="status-text">${
-          isOpen ? 'Mercado Aberto' : 'Mercado Fechado'
-        }</span>
+        <span class="status-text">${statusText}</span>
       </div>
       <div class="market-time">
         <span class="time">${timeString}</span>
         <span class="date">${dateString}</span>
+      </div>
+      <div class="market-countdown">
+        <span class="countdown-text">${timeRemainingText}</span>
       </div>
     </div>
   `

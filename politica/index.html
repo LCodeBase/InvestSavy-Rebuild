@@ -1,154 +1,45 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política - InvestSavy</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header Principal -->
-    <header class="header">
-        <a href="index.html" class="logo">InvestSavy</a>
-        <div class="header-actions">
-            <a href="login" class="header-action">Login</a>
-            <a href="assine" class="header-action">Assine</a>
-            <a href="contato" class="header-action">Contato</a>
-        </div>
-    </header>
+---
+layout: default
+title: Política
+---
 
-    <!-- Barra de Navegação Secundária -->
-    <nav class="nav-bar">
-        <ul class="nav-menu">
-            <li><a href="destaques" class="nav-link">Destaques</a></li>
-            <li><a href="mercados" class="nav-link">Mercados</a></li>
-            <li><a href="economia" class="nav-link">Economia</a></li>
-            <li><a href="politica" class="nav-link">Política</a></li>
-            <li><a href="tecnologia" class="nav-link">Tecnologia</a></li>
-            <li><a href="energia" class="nav-link">Energia</a></li>
-        </ul>
-        <div class="nav-search">
-            <input type="search" placeholder="Buscar...">
-            <button type="button">🔍</button>
+<!-- Hero Section -->
+<section class="hero">
+    <h1 class="hero-title">Política</h1>
+    <p class="hero-subtitle">Notícias e análises sobre política nacional e internacional</p>
+    <div class="hero-feature-card">
+        <div class="hero-feature-header">
+            <span class="badge-feature">POLÍTICA</span>
+            <span class="feature-time">Atualizado há 1 hora</span>
         </div>
-    </nav>
-
-    <!-- Mercados em Tempo Real -->
-    <div class="markets-bar">
-        <div class="market-item">
-            <span>Ibovespa</span>
-            <span class="market-value">120.000</span>
-            <span class="market-change positive">+1.2%</span>
-        </div>
-        <div class="market-item">
-            <span>Dólar</span>
-            <span class="market-value">5.20</span>
-            <span class="market-change negative">-0.5%</span>
-        </div>
-        <div class="market-item">
-            <span>Bitcoin</span>
-            <span class="market-value">45.000</span>
-            <span class="market-change positive">+2.3%</span>
-        </div>
-        <div class="market-item">
-            <span>Petróleo</span>
-            <span class="market-value">75.50</span>
-            <span class="market-change positive">+0.8%</span>
+        <h2 class="feature-title">Reforma tributária avança no Congresso</h2>
+        <p class="feature-desc">Proposta de reforma tributária recebe parecer favorável na comissão especial e deve ser votada em plenário nas próximas semanas.</p>
+        <div class="feature-actions">
+            <a href="{{ '/politica/reforma-tributaria' | relative_url }}" class="feature-link">Leia a notícia completa →</a>
         </div>
     </div>
+</section>
 
-    <!-- Hero Section da Categoria -->
-    <section class="category-hero">
-        <div class="container">
-            <h1 class="category-title">Política</h1>
-            <p class="category-description">Notícias e análises sobre decisões políticas que impactam o mercado financeiro e a economia brasileira.</p>
-        </div>
-    </section>
-
-    <!-- Conteúdo Principal -->
-    <main class="news-grid">
-        <!-- Notícia 1 -->
-        <article class="news-card">
-            <img src="assets/images/news1.jpg" alt="Notícia de Política" class="news-image">
-            <div class="news-content">
-                <span class="news-tag politica">Política</span>
-                <span class="news-tag destaque">Destaques</span>
-                <h2 class="news-title">Reforma tributária é aprovada no Senado</h2>
-                <p class="news-excerpt">Proposta de simplificação do sistema tributário brasileiro avança no Congresso Nacional...</p>
-                <div class="news-meta">
-                    <span class="news-date">15 de Março, 2024</span>
-                    <a href="noticia/reforma-tributaria" class="news-link">Ler mais</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Notícia 2 -->
-        <article class="news-card">
-            <img src="assets/images/news2.jpg" alt="Notícia de Política" class="news-image">
-            <div class="news-content">
-                <span class="news-tag politica">Política</span>
-                <h2 class="news-title">Governo anuncia pacote de medidas para indústria</h2>
-                <p class="news-excerpt">Novo programa de incentivos fiscais visa fortalecer o setor industrial nacional...</p>
-                <div class="news-meta">
-                    <span class="news-date">14 de Março, 2024</span>
-                    <a href="noticia/pacote-industrial" class="news-link">Ler mais</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Notícia 3 -->
-        <article class="news-card">
-            <img src="assets/images/news3.jpg" alt="Notícia de Política" class="news-image">
-            <div class="news-content">
-                <span class="news-tag politica">Política</span>
-                <h2 class="news-title">Acordo comercial com União Europeia avança</h2>
-                <p class="news-excerpt">Negociações para acordo de livre comércio entre Brasil e UE entram em fase final...</p>
-                <div class="news-meta">
-                    <span class="news-date">13 de Março, 2024</span>
-                    <a href="noticia/acordo-ue" class="news-link">Ler mais</a>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <h2>Receba análises exclusivas direto no seu e-mail</h2>
-        <form class="newsletter-form">
-            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
-            <button type="submit" class="newsletter-button">Inscrever-se</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Sobre o InvestSavy</h3>
-                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Links Rápidos</h3>
-                <ul class="footer-links">
-                    <li><a href="termos">Termos de Uso</a></li>
-                    <li><a href="privacidade">Política de Privacidade</a></li>
-                    <li><a href="contato">Fale Conosco</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Redes Sociais</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Instagram</a></li>
-                </ul>
+<!-- Conteúdo Principal -->
+<main class="news-grid">
+    {% assign politica_posts = site.posts | where: "categories", "Política" %}
+    {% for post in politica_posts %}
+    <article class="news-card">
+        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="news-image">
+        <div class="news-content">
+            <span class="news-tag politica">Política</span>
+            {% if post.categories %}
+                {% for category in post.categories %}
+                <span class="news-tag {{ category | downcase }}">{{ category }}</span>
+                {% endfor %}
+            {% endif %}
+            <h2 class="news-title">{{ post.title }}</h2>
+            <p class="news-excerpt">{{ post.excerpt }}</p>
+            <div class="news-meta">
+                <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                <a href="{{ post.url | relative_url }}" class="news-link">Ler mais</a>
             </div>
         </div>
-    </footer>
-
-    <script src="assets/js/markets.js"></script>
-    <script src="assets/js/news.js"></script>
-</body>
-</html>
+    </article>
+    {% endfor %}
+</main>

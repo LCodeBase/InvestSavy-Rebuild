@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}InvestSavy</title>
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/Logo1.png' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Principal -->
+    <header class="header">
+        <a href="{{ '/' | relative_url }}" class="logo">InvestSavy</a>
+        <div class="header-actions">
+            <a href="{{ '/login' | relative_url }}" class="header-action">Login</a>
+            <a href="{{ '/assine' | relative_url }}" class="header-action">Assine</a>
+            <a href="{{ '/contato' | relative_url }}" class="header-action">Contato</a>
+        </div>
+    </header>
+
+    <!-- Barra de Navegação Secundária -->
+    <nav class="nav-bar">
+        <ul class="nav-menu">
+            <li><a href="{{ '/destaques' | relative_url }}" class="nav-link">Destaques</a></li>
+            <li><a href="{{ '/mercados' | relative_url }}" class="nav-link">Mercados</a></li>
+            <li><a href="{{ '/economia' | relative_url }}" class="nav-link">Economia</a></li>
+            <li><a href="{{ '/politica' | relative_url }}" class="nav-link">Política</a></li>
+            <li><a href="{{ '/tecnologia' | relative_url }}" class="nav-link">Tecnologia</a></li>
+            <li><a href="{{ '/energia' | relative_url }}" class="nav-link">Energia</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    {{ content }}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o InvestSavy</h3>
+                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="{{ '/termos' | relative_url }}">Termos de Uso</a></li>
+                    <li><a href="{{ '/privacidade' | relative_url }}">Política de Privacidade</a></li>
+                    <li><a href="{{ '/contato' | relative_url }}">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ '/assets/js/markets.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/news.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+</body>
+</html>

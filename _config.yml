@@ -1,8 +1,8 @@
 # Configurações do Site
 title: InvestSavy
 description: Portal líder em notícias financeiras e análises de mercado
-baseurl: ''
-url: 'https://investsavy.com.br'
+baseurl: '' # Mantenha vazio para desenvolvimento local
+url: 'https://lcodebase.github.io/InvestSavy/'
 
 # Configurações de Build
 markdown: kramdown
@@ -17,15 +17,24 @@ collections:
   posts:
     output: true
     permalink: /:categories/:title/
-
-# Configurações de Categorias
-categories:
-  - economia
-  - mercados
-  - analises
-  - empresas
-  - setor-publico
-  - global
+  destaques:
+    output: true
+    permalink: /destaques/:title/
+  mercados:
+    output: true
+    permalink: /mercados/:title/
+  economia:
+    output: true
+    permalink: /economia/:title/
+  politica:
+    output: true
+    permalink: /politica/:title/
+  tecnologia:
+    output: true
+    permalink: /tecnologia/:title/
+  energia:
+    output: true
+    permalink: /energia/:title/
 
 # Configurações de Layout
 defaults:
@@ -36,6 +45,42 @@ defaults:
       layout: 'post'
       author: 'Equipe InvestSavy'
       comments: true
+  - scope:
+      path: ''
+      type: 'destaques'
+    values:
+      layout: 'post'
+      author: 'Equipe InvestSavy'
+  - scope:
+      path: ''
+      type: 'mercados'
+    values:
+      layout: 'post'
+      author: 'Equipe InvestSavy'
+  - scope:
+      path: ''
+      type: 'economia'
+    values:
+      layout: 'post'
+      author: 'Equipe InvestSavy'
+  - scope:
+      path: ''
+      type: 'politica'
+    values:
+      layout: 'post'
+      author: 'Equipe InvestSavy'
+  - scope:
+      path: ''
+      type: 'tecnologia'
+    values:
+      layout: 'post'
+      author: 'Equipe InvestSavy'
+  - scope:
+      path: ''
+      type: 'energia'
+    values:
+      layout: 'post'
+      author: 'Equipe InvestSavy'
 
 # Configurações de Exclusão
 exclude:

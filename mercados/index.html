@@ -1,153 +1,34 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercados - InvestSavy</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header Principal -->
-    <header class="header">
-        <a href="index.html" class="logo"><img src="assets/images/Logo1.png" alt="Logo InvestSavy">InvestSavy</a>
-        <div class="header-actions">
-            <a href="login" class="header-action">Login</a>
-            <a href="assine" class="header-action">Assine</a>
-            <a href="contato" class="header-action">Contato</a>
-        </div>
-    </header>
+---
+layout: default
+title: Mercados
+---
 
-    <!-- Barra de Navegação Secundária -->
-    <nav class="nav-bar">
-        <ul class="nav-menu">
-            <li><a href="destaques" class="nav-link">Destaques</a></li>
-            <li><a href="mercados" class="nav-link">Mercados</a></li>
-            <li><a href="economia" class="nav-link">Economia</a></li>
-            <li><a href="politica" class="nav-link">Política</a></li>
-            <li><a href="tecnologia" class="nav-link">Tecnologia</a></li>
-            <li><a href="energia" class="nav-link">Energia</a></li>
-        </ul>
-        <div class="nav-search">
-            <input type="search" placeholder="Buscar...">
-            <button type="button">🔍</button>
-        </div>
-    </nav>
+<!-- Hero Section -->
+<section class="hero">
+    <h1 class="hero-title">Mercados</h1>
+    <p class="hero-subtitle">Acompanhe as principais movimentações do mercado financeiro</p>
+</section>
 
-    <!-- Mercados em Tempo Real -->
-    <div class="markets-bar">
-        <div class="market-item">
-            <span>Ibovespa</span>
-            <span class="market-value">120.000</span>
-            <span class="market-change positive">+1.2%</span>
-        </div>
-        <div class="market-item">
-            <span>Dólar</span>
-            <span class="market-value">5.20</span>
-            <span class="market-change negative">-0.5%</span>
-        </div>
-        <div class="market-item">
-            <span>Bitcoin</span>
-            <span class="market-value">45.000</span>
-            <span class="market-change positive">+2.3%</span>
-        </div>
-        <div class="market-item">
-            <span>Petróleo</span>
-            <span class="market-value">75.50</span>
-            <span class="market-change positive">+0.8%</span>
-        </div>
-    </div>
-
-    <!-- Hero Section da Categoria -->
-    <section class="category-hero">
-        <div class="container">
-            <h1 class="category-title">Mercados</h1>
-            <p class="category-description">Acompanhe as últimas notícias e análises sobre o mercado financeiro, ações, índices e tendências do mercado.</p>
-        </div>
-    </section>
-
-    <!-- Conteúdo Principal -->
-    <main class="news-grid">
-        <!-- Notícia 1 -->
-        <article class="news-card">
-            <img src="assets/images/news1.jpg" alt="Notícia de Mercados" class="news-image">
-            <div class="news-content">
-                <span class="news-tag mercados">Mercados</span>
-                <span class="news-tag destaque">Destaques</span>
-                <h2 class="news-title">Ibovespa fecha em alta com dados econômicos positivos</h2>
-                <p class="news-excerpt">O principal índice da B3 subiu 2,5% nesta quarta-feira, impulsionado por dados econômicos melhores que o esperado...</p>
-                <div class="news-meta">
-                    <span class="news-date">15 de Março, 2024</span>
-                    <a href="noticia/ibovespa-alta" class="news-link">Ler mais</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Notícia 2 -->
-        <article class="news-card">
-            <img src="assets/images/news2.jpg" alt="Notícia de Mercados" class="news-image">
-            <div class="news-content">
-                <span class="news-tag mercados">Mercados</span>
-                <h2 class="news-title">Ações de tecnologia lideram ganhos na B3</h2>
-                <p class="news-excerpt">Setor registra alta de 3% impulsionado por resultados positivos das empresas de tecnologia...</p>
-                <div class="news-meta">
-                    <span class="news-date">14 de Março, 2024</span>
-                    <a href="noticia/acoes-tecnologia" class="news-link">Ler mais</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Notícia 3 -->
-        <article class="news-card">
-            <img src="assets/images/news3.jpg" alt="Notícia de Mercados" class="news-image">
-            <div class="news-content">
-                <span class="news-tag mercados">Mercados</span>
-                <h2 class="news-title">Petrobras anuncia novo recorde de produção</h2>
-                <p class="news-excerpt">Empresa atinge marca histórica de produção de petróleo no pré-sal, impulsionando ações...</p>
-                <div class="news-meta">
-                    <span class="news-date">13 de Março, 2024</span>
-                    <a href="noticia/petrobras-producao" class="news-link">Ler mais</a>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <h2>Receba análises exclusivas direto no seu e-mail</h2>
-        <form class="newsletter-form">
-            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
-            <button type="submit" class="newsletter-button">Inscrever-se</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Sobre o InvestSavy</h3>
-                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Links Rápidos</h3>
-                <ul class="footer-links">
-                    <li><a href="termos">Termos de Uso</a></li>
-                    <li><a href="privacidade">Política de Privacidade</a></li>
-                    <li><a href="contato">Fale Conosco</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Redes Sociais</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Instagram</a></li>
-                </ul>
+<!-- Conteúdo Principal -->
+<main class="news-grid">
+    {% assign mercado_posts = site.posts | where: "categories", "Mercados" %}
+    {% for post in mercado_posts %}
+    <article class="news-card">
+        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="news-image">
+        <div class="news-content">
+            <span class="news-tag mercados">Mercados</span>
+            {% if post.categories %}
+                {% for category in post.categories %}
+                <span class="news-tag {{ category | downcase }}">{{ category }}</span>
+                {% endfor %}
+            {% endif %}
+            <h2 class="news-title">{{ post.title }}</h2>
+            <p class="news-excerpt">{{ post.excerpt }}</p>
+            <div class="news-meta">
+                <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                <a href="{{ post.url | relative_url }}" class="news-link">Ler mais</a>
             </div>
         </div>
-    </footer>
-
-    <script src="assets/js/markets.js"></script>
-</body>
-</html>
+    </article>
+    {% endfor %}
+</main>
