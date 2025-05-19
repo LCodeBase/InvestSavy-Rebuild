@@ -153,7 +153,7 @@ async function updateHighlights() {
       <article class="highlight-card">
         <div class="highlight-card__image">
           <img src="${
-            article.urlToImage || '/assets/images/placeholder.jpg'
+            article.urlToImage || 'assets/images/placeholder.jpg'
           }" alt="${article.title}">
         </div>
         <div class="highlight-card__content">
@@ -201,7 +201,7 @@ async function updateCategories() {
             <article class="category-card">
               <div class="category-card__image">
                 <img src="${
-                  article.urlToImage || '/assets/images/placeholder.jpg'
+                  article.urlToImage || 'assets/images/placeholder.jpg'
                 }" alt="${article.title}">
               </div>
               <div class="category-card__content">

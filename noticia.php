@@ -26,8 +26,8 @@ $content = $parsedown->text($post['content']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($post['title']); ?> - InvestSavy</title>
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -115,6 +115,6 @@ $content = $parsedown->text($post['content']);
         </div>
     </footer>
 
-    <script src="/assets/js/markets.js"></script>
+    <script src="assets/js/markets.js"></script>
 </body>
 </html>
