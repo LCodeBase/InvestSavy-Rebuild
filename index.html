@@ -58,35 +58,23 @@
 
     <!-- Conteúdo Principal -->
     <main class="news-grid">
-        <!-- Exemplo de Notícia com Tag -->
+        {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
+        {% for post in principais %}
         <article class="news-card">
-            <img src="assets/images/news/ibovespa-alta.jpg" alt="Notícia Principal" class="news-image">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="news-image">
             <div class="news-content">
-                <span class="news-tag destaque">Destaques</span>
-                <span class="news-tag mercados">Mercados</span>
-                <h2 class="news-title">Ibovespa fecha em alta com dados econômicos positivos</h2>
-                <p class="news-excerpt">O principal índice da B3 subiu 2,5% nesta quarta-feira, impulsionado por dados econômicos melhores que o esperado...</p>
+                {% for categoria in post.categories %}
+                <span class="news-tag {{ categoria | downcase }}">{{ categoria }}</span>
+                {% endfor %}
+                <h2 class="news-title">{{ post.title }}</h2>
+                <p class="news-excerpt">{{ post.excerpt }}</p>
                 <div class="news-meta">
-                    <span class="news-date">15 de Março, 2024</span>
-                    <a href="noticia/ibovespa-alta" class="news-link">Ler mais</a>
+                    <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                    <a href="{{ post.url }}" class="news-link">Ler mais</a>
                 </div>
             </div>
         </article>
-
-        <!-- Exemplo de Notícia com Múltiplas Tags -->
-        <article class="news-card">
-            <img src="assets/images/news/selic-mantida.jpg" alt="Notícia de Economia" class="news-image">
-            <div class="news-content">
-                <span class="news-tag economia">Economia</span>
-                <span class="news-tag politica">Política</span>
-                <h2 class="news-title">BC mantém Selic em 11,75% ao ano</h2>
-                <p class="news-excerpt">O Comitê de Política Monetária (Copom) decidiu manter a taxa básica de juros em 11,75% ao ano...</p>
-                <div class="news-meta">
-                    <span class="news-date">14 de Março, 2024</span>
-                    <a href="noticia/selic-mantida" class="news-link">Ler mais</a>
-                </div>
-            </div>
-        </article>
+        {% endfor %}
     </main>
 
     <!-- Newsletter -->
@@ -338,3 +326,1497 @@
     <script src="assets/js/search.js"></script>
 </body>
 </html>
+
+    <main class="news-grid">
+        {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
+        {% for post in principais %}
+        <article class="news-card">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="news-image">
+            <div class="news-content">
+                {% for categoria in post.categories %}
+                <span class="news-tag {{ categoria | downcase }}">{{ categoria }}</span>
+                {% endfor %}
+                <h2 class="news-title">{{ post.title }}</h2>
+                <p class="news-excerpt">{{ post.excerpt }}</p>
+                <div class="news-meta">
+                    <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                    <a href="{{ post.url }}" class="news-link">Ler mais</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Receba análises exclusivas direto no seu e-mail</h2>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="newsletter-button">Inscrever-se</button>
+        </form>
+    </section>
+
+<!-- Ações em Destaque -->
+<section class="stocks-highlight">
+    <h2 class="stocks-title">Ações em Destaque</h2>
+    <div class="stocks-table-wrapper">
+        <div class="market-status"></div>
+        <div class="stocks-table-container">
+            <table class="stocks-table">
+                <thead>
+                    <tr>
+                        <th>TICKER</th>
+                        <th>EMPRESA</th>
+                        <th>PREÇO</th>
+                        <th>VARIAÇÃO</th>
+                        <th>VOLUME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PETR4</strong></td>
+                        <td>Petrobras</td>
+                        <td>R$ 38.75</td>
+                        <td class="positive">+1.25%</td>
+                        <td>2.3M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VALE3</strong></td>
+                        <td>Vale</td>
+                        <td>R$ 68.43</td>
+                        <td class="negative">-0.75%</td>
+                        <td>3.1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ITUB4</strong></td>
+                        <td>Itaú Unibanco</td>
+                        <td>R$ 34.52</td>
+                        <td class="positive">+0.62%</td>
+                        <td>1.8M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BBDC4</strong></td>
+                        <td>Bradesco</td>
+                        <td>R$ 19.87</td>
+                        <td class="negative">-0.23%</td>
+                        <td>2.5M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ABEV3</strong></td>
+                        <td>Ambev</td>
+                        <td>R$ 14.93</td>
+                        <td class="positive">+0.31%</td>
+                        <td>1.2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WEGE3</strong></td>
+                        <td>WEG</td>
+                        <td>R$ 42.65</td>
+                        <td class="positive">+2.18%</td>
+                        <td>980K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RENT3</strong></td>
+                        <td>Localiza</td>
+                        <td>R$ 58.72</td>
+                        <td class="negative">-1.42%</td>
+                        <td>865K</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o InvestSavy</h3>
+                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="termos">Termos de Uso</a></li>
+                    <li><a href="privacidade">Política de Privacidade</a></li>
+                    <li><a href="contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/markets.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>
+
+    <main class="news-grid">
+        {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
+        {% for post in principais %}
+        <article class="news-card">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="news-image">
+            <div class="news-content">
+                {% for categoria in post.categories %}
+                <span class="news-tag {{ categoria | downcase }}">{{ categoria }}</span>
+                {% endfor %}
+                <h2 class="news-title">{{ post.title }}</h2>
+                <p class="news-excerpt">{{ post.excerpt }}</p>
+                <div class="news-meta">
+                    <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                    <a href="{{ post.url }}" class="news-link">Ler mais</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Receba análises exclusivas direto no seu e-mail</h2>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="newsletter-button">Inscrever-se</button>
+        </form>
+    </section>
+
+<!-- Ações em Destaque -->
+<section class="stocks-highlight">
+    <h2 class="stocks-title">Ações em Destaque</h2>
+    <div class="stocks-table-wrapper">
+        <div class="market-status"></div>
+        <div class="stocks-table-container">
+            <table class="stocks-table">
+                <thead>
+                    <tr>
+                        <th>TICKER</th>
+                        <th>EMPRESA</th>
+                        <th>PREÇO</th>
+                        <th>VARIAÇÃO</th>
+                        <th>VOLUME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PETR4</strong></td>
+                        <td>Petrobras</td>
+                        <td>R$ 38.75</td>
+                        <td class="positive">+1.25%</td>
+                        <td>2.3M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VALE3</strong></td>
+                        <td>Vale</td>
+                        <td>R$ 68.43</td>
+                        <td class="negative">-0.75%</td>
+                        <td>3.1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ITUB4</strong></td>
+                        <td>Itaú Unibanco</td>
+                        <td>R$ 34.52</td>
+                        <td class="positive">+0.62%</td>
+                        <td>1.8M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BBDC4</strong></td>
+                        <td>Bradesco</td>
+                        <td>R$ 19.87</td>
+                        <td class="negative">-0.23%</td>
+                        <td>2.5M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ABEV3</strong></td>
+                        <td>Ambev</td>
+                        <td>R$ 14.93</td>
+                        <td class="positive">+0.31%</td>
+                        <td>1.2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WEGE3</strong></td>
+                        <td>WEG</td>
+                        <td>R$ 42.65</td>
+                        <td class="positive">+2.18%</td>
+                        <td>980K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RENT3</strong></td>
+                        <td>Localiza</td>
+                        <td>R$ 58.72</td>
+                        <td class="negative">-1.42%</td>
+                        <td>865K</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o InvestSavy</h3>
+                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="termos">Termos de Uso</a></li>
+                    <li><a href="privacidade">Política de Privacidade</a></li>
+                    <li><a href="contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/markets.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>
+
+    <main class="news-grid">
+        {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
+        {% for post in principais %}
+        <article class="news-card">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="news-image">
+            <div class="news-content">
+                {% for categoria in post.categories %}
+                <span class="news-tag {{ categoria | downcase }}">{{ categoria }}</span>
+                {% endfor %}
+                <h2 class="news-title">{{ post.title }}</h2>
+                <p class="news-excerpt">{{ post.excerpt }}</p>
+                <div class="news-meta">
+                    <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                    <a href="{{ post.url }}" class="news-link">Ler mais</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Receba análises exclusivas direto no seu e-mail</h2>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="newsletter-button">Inscrever-se</button>
+        </form>
+    </section>
+
+<!-- Ações em Destaque -->
+<section class="stocks-highlight">
+    <h2 class="stocks-title">Ações em Destaque</h2>
+    <div class="stocks-table-wrapper">
+        <div class="market-status"></div>
+        <div class="stocks-table-container">
+            <table class="stocks-table">
+                <thead>
+                    <tr>
+                        <th>TICKER</th>
+                        <th>EMPRESA</th>
+                        <th>PREÇO</th>
+                        <th>VARIAÇÃO</th>
+                        <th>VOLUME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PETR4</strong></td>
+                        <td>Petrobras</td>
+                        <td>R$ 38.75</td>
+                        <td class="positive">+1.25%</td>
+                        <td>2.3M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VALE3</strong></td>
+                        <td>Vale</td>
+                        <td>R$ 68.43</td>
+                        <td class="negative">-0.75%</td>
+                        <td>3.1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ITUB4</strong></td>
+                        <td>Itaú Unibanco</td>
+                        <td>R$ 34.52</td>
+                        <td class="positive">+0.62%</td>
+                        <td>1.8M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BBDC4</strong></td>
+                        <td>Bradesco</td>
+                        <td>R$ 19.87</td>
+                        <td class="negative">-0.23%</td>
+                        <td>2.5M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ABEV3</strong></td>
+                        <td>Ambev</td>
+                        <td>R$ 14.93</td>
+                        <td class="positive">+0.31%</td>
+                        <td>1.2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WEGE3</strong></td>
+                        <td>WEG</td>
+                        <td>R$ 42.65</td>
+                        <td class="positive">+2.18%</td>
+                        <td>980K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RENT3</strong></td>
+                        <td>Localiza</td>
+                        <td>R$ 58.72</td>
+                        <td class="negative">-1.42%</td>
+                        <td>865K</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o InvestSavy</h3>
+                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="termos">Termos de Uso</a></li>
+                    <li><a href="privacidade">Política de Privacidade</a></li>
+                    <li><a href="contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/markets.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>
+
+    <main class="news-grid">
+        {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
+        {% for post in principais %}
+        <article class="news-card">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="news-image">
+            <div class="news-content">
+                {% for categoria in post.categories %}
+                <span class="news-tag {{ categoria | downcase }}">{{ categoria }}</span>
+                {% endfor %}
+                <h2 class="news-title">{{ post.title }}</h2>
+                <p class="news-excerpt">{{ post.excerpt }}</p>
+                <div class="news-meta">
+                    <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                    <a href="{{ post.url }}" class="news-link">Ler mais</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Receba análises exclusivas direto no seu e-mail</h2>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="newsletter-button">Inscrever-se</button>
+        </form>
+    </section>
+
+<!-- Ações em Destaque -->
+<section class="stocks-highlight">
+    <h2 class="stocks-title">Ações em Destaque</h2>
+    <div class="stocks-table-wrapper">
+        <div class="market-status"></div>
+        <div class="stocks-table-container">
+            <table class="stocks-table">
+                <thead>
+                    <tr>
+                        <th>TICKER</th>
+                        <th>EMPRESA</th>
+                        <th>PREÇO</th>
+                        <th>VARIAÇÃO</th>
+                        <th>VOLUME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PETR4</strong></td>
+                        <td>Petrobras</td>
+                        <td>R$ 38.75</td>
+                        <td class="positive">+1.25%</td>
+                        <td>2.3M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VALE3</strong></td>
+                        <td>Vale</td>
+                        <td>R$ 68.43</td>
+                        <td class="negative">-0.75%</td>
+                        <td>3.1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ITUB4</strong></td>
+                        <td>Itaú Unibanco</td>
+                        <td>R$ 34.52</td>
+                        <td class="positive">+0.62%</td>
+                        <td>1.8M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BBDC4</strong></td>
+                        <td>Bradesco</td>
+                        <td>R$ 19.87</td>
+                        <td class="negative">-0.23%</td>
+                        <td>2.5M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ABEV3</strong></td>
+                        <td>Ambev</td>
+                        <td>R$ 14.93</td>
+                        <td class="positive">+0.31%</td>
+                        <td>1.2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WEGE3</strong></td>
+                        <td>WEG</td>
+                        <td>R$ 42.65</td>
+                        <td class="positive">+2.18%</td>
+                        <td>980K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RENT3</strong></td>
+                        <td>Localiza</td>
+                        <td>R$ 58.72</td>
+                        <td class="negative">-1.42%</td>
+                        <td>865K</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o InvestSavy</h3>
+                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="termos">Termos de Uso</a></li>
+                    <li><a href="privacidade">Política de Privacidade</a></li>
+                    <li><a href="contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/markets.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>
+
+    <main class="news-grid">
+        {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
+        {% for post in principais %}
+        <article class="news-card">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="news-image">
+            <div class="news-content">
+                {% for categoria in post.categories %}
+                <span class="news-tag {{ categoria | downcase }}">{{ categoria }}</span>
+                {% endfor %}
+                <h2 class="news-title">{{ post.title }}</h2>
+                <p class="news-excerpt">{{ post.excerpt }}</p>
+                <div class="news-meta">
+                    <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                    <a href="{{ post.url }}" class="news-link">Ler mais</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Receba análises exclusivas direto no seu e-mail</h2>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="newsletter-button">Inscrever-se</button>
+        </form>
+    </section>
+
+<!-- Ações em Destaque -->
+<section class="stocks-highlight">
+    <h2 class="stocks-title">Ações em Destaque</h2>
+    <div class="stocks-table-wrapper">
+        <div class="market-status"></div>
+        <div class="stocks-table-container">
+            <table class="stocks-table">
+                <thead>
+                    <tr>
+                        <th>TICKER</th>
+                        <th>EMPRESA</th>
+                        <th>PREÇO</th>
+                        <th>VARIAÇÃO</th>
+                        <th>VOLUME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PETR4</strong></td>
+                        <td>Petrobras</td>
+                        <td>R$ 38.75</td>
+                        <td class="positive">+1.25%</td>
+                        <td>2.3M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VALE3</strong></td>
+                        <td>Vale</td>
+                        <td>R$ 68.43</td>
+                        <td class="negative">-0.75%</td>
+                        <td>3.1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ITUB4</strong></td>
+                        <td>Itaú Unibanco</td>
+                        <td>R$ 34.52</td>
+                        <td class="positive">+0.62%</td>
+                        <td>1.8M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BBDC4</strong></td>
+                        <td>Bradesco</td>
+                        <td>R$ 19.87</td>
+                        <td class="negative">-0.23%</td>
+                        <td>2.5M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ABEV3</strong></td>
+                        <td>Ambev</td>
+                        <td>R$ 14.93</td>
+                        <td class="positive">+0.31%</td>
+                        <td>1.2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WEGE3</strong></td>
+                        <td>WEG</td>
+                        <td>R$ 42.65</td>
+                        <td class="positive">+2.18%</td>
+                        <td>980K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RENT3</strong></td>
+                        <td>Localiza</td>
+                        <td>R$ 58.72</td>
+                        <td class="negative">-1.42%</td>
+                        <td>865K</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o InvestSavy</h3>
+                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="termos">Termos de Uso</a></li>
+                    <li><a href="privacidade">Política de Privacidade</a></li>
+                    <li><a href="contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/markets.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>
+
+    <main class="news-grid">
+        {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
+        {% for post in principais %}
+        <article class="news-card">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="news-image">
+            <div class="news-content">
+                {% for categoria in post.categories %}
+                <span class="news-tag {{ categoria | downcase }}">{{ categoria }}</span>
+                {% endfor %}
+                <h2 class="news-title">{{ post.title }}</h2>
+                <p class="news-excerpt">{{ post.excerpt }}</p>
+                <div class="news-meta">
+                    <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                    <a href="{{ post.url }}" class="news-link">Ler mais</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Receba análises exclusivas direto no seu e-mail</h2>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="newsletter-button">Inscrever-se</button>
+        </form>
+    </section>
+
+<!-- Ações em Destaque -->
+<section class="stocks-highlight">
+    <h2 class="stocks-title">Ações em Destaque</h2>
+    <div class="stocks-table-wrapper">
+        <div class="market-status"></div>
+        <div class="stocks-table-container">
+            <table class="stocks-table">
+                <thead>
+                    <tr>
+                        <th>TICKER</th>
+                        <th>EMPRESA</th>
+                        <th>PREÇO</th>
+                        <th>VARIAÇÃO</th>
+                        <th>VOLUME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PETR4</strong></td>
+                        <td>Petrobras</td>
+                        <td>R$ 38.75</td>
+                        <td class="positive">+1.25%</td>
+                        <td>2.3M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VALE3</strong></td>
+                        <td>Vale</td>
+                        <td>R$ 68.43</td>
+                        <td class="negative">-0.75%</td>
+                        <td>3.1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ITUB4</strong></td>
+                        <td>Itaú Unibanco</td>
+                        <td>R$ 34.52</td>
+                        <td class="positive">+0.62%</td>
+                        <td>1.8M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BBDC4</strong></td>
+                        <td>Bradesco</td>
+                        <td>R$ 19.87</td>
+                        <td class="negative">-0.23%</td>
+                        <td>2.5M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ABEV3</strong></td>
+                        <td>Ambev</td>
+                        <td>R$ 14.93</td>
+                        <td class="positive">+0.31%</td>
+                        <td>1.2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WEGE3</strong></td>
+                        <td>WEG</td>
+                        <td>R$ 42.65</td>
+                        <td class="positive">+2.18%</td>
+                        <td>980K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RENT3</strong></td>
+                        <td>Localiza</td>
+                        <td>R$ 58.72</td>
+                        <td class="negative">-1.42%</td>
+                        <td>865K</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o InvestSavy</h3>
+                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="termos">Termos de Uso</a></li>
+                    <li><a href="privacidade">Política de Privacidade</a></li>
+                    <li><a href="contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/markets.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>
+
+    <main class="news-grid">
+        {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
+        {% for post in principais %}
+        <article class="news-card">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="news-image">
+            <div class="news-content">
+                {% for categoria in post.categories %}
+                <span class="news-tag {{ categoria | downcase }}">{{ categoria }}</span>
+                {% endfor %}
+                <h2 class="news-title">{{ post.title }}</h2>
+                <p class="news-excerpt">{{ post.excerpt }}</p>
+                <div class="news-meta">
+                    <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                    <a href="{{ post.url }}" class="news-link">Ler mais</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Receba análises exclusivas direto no seu e-mail</h2>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="newsletter-button">Inscrever-se</button>
+        </form>
+    </section>
+
+<!-- Ações em Destaque -->
+<section class="stocks-highlight">
+    <h2 class="stocks-title">Ações em Destaque</h2>
+    <div class="stocks-table-wrapper">
+        <div class="market-status"></div>
+        <div class="stocks-table-container">
+            <table class="stocks-table">
+                <thead>
+                    <tr>
+                        <th>TICKER</th>
+                        <th>EMPRESA</th>
+                        <th>PREÇO</th>
+                        <th>VARIAÇÃO</th>
+                        <th>VOLUME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PETR4</strong></td>
+                        <td>Petrobras</td>
+                        <td>R$ 38.75</td>
+                        <td class="positive">+1.25%</td>
+                        <td>2.3M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VALE3</strong></td>
+                        <td>Vale</td>
+                        <td>R$ 68.43</td>
+                        <td class="negative">-0.75%</td>
+                        <td>3.1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ITUB4</strong></td>
+                        <td>Itaú Unibanco</td>
+                        <td>R$ 34.52</td>
+                        <td class="positive">+0.62%</td>
+                        <td>1.8M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BBDC4</strong></td>
+                        <td>Bradesco</td>
+                        <td>R$ 19.87</td>
+                        <td class="negative">-0.23%</td>
+                        <td>2.5M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ABEV3</strong></td>
+                        <td>Ambev</td>
+                        <td>R$ 14.93</td>
+                        <td class="positive">+0.31%</td>
+                        <td>1.2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WEGE3</strong></td>
+                        <td>WEG</td>
+                        <td>R$ 42.65</td>
+                        <td class="positive">+2.18%</td>
+                        <td>980K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RENT3</strong></td>
+                        <td>Localiza</td>
+                        <td>R$ 58.72</td>
+                        <td class="negative">-1.42%</td>
+                        <td>865K</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o InvestSavy</h3>
+                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="termos">Termos de Uso</a></li>
+                    <li><a href="privacidade">Política de Privacidade</a></li>
+                    <li><a href="contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/markets.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>
+
+    <main class="news-grid">
+        {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
+        {% for post in principais %}
+        <article class="news-card">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="news-image">
+            <div class="news-content">
+                {% for categoria in post.categories %}
+                <span class="news-tag {{ categoria | downcase }}">{{ categoria }}</span>
+                {% endfor %}
+                <h2 class="news-title">{{ post.title }}</h2>
+                <p class="news-excerpt">{{ post.excerpt }}</p>
+                <div class="news-meta">
+                    <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                    <a href="{{ post.url }}" class="news-link">Ler mais</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Receba análises exclusivas direto no seu e-mail</h2>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="newsletter-button">Inscrever-se</button>
+        </form>
+    </section>
+
+<!-- Ações em Destaque -->
+<section class="stocks-highlight">
+    <h2 class="stocks-title">Ações em Destaque</h2>
+    <div class="stocks-table-wrapper">
+        <div class="market-status"></div>
+        <div class="stocks-table-container">
+            <table class="stocks-table">
+                <thead>
+                    <tr>
+                        <th>TICKER</th>
+                        <th>EMPRESA</th>
+                        <th>PREÇO</th>
+                        <th>VARIAÇÃO</th>
+                        <th>VOLUME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PETR4</strong></td>
+                        <td>Petrobras</td>
+                        <td>R$ 38.75</td>
+                        <td class="positive">+1.25%</td>
+                        <td>2.3M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VALE3</strong></td>
+                        <td>Vale</td>
+                        <td>R$ 68.43</td>
+                        <td class="negative">-0.75%</td>
+                        <td>3.1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ITUB4</strong></td>
+                        <td>Itaú Unibanco</td>
+                        <td>R$ 34.52</td>
+                        <td class="positive">+0.62%</td>
+                        <td>1.8M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BBDC4</strong></td>
+                        <td>Bradesco</td>
+                        <td>R$ 19.87</td>
+                        <td class="negative">-0.23%</td>
+                        <td>2.5M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ABEV3</strong></td>
+                        <td>Ambev</td>
+                        <td>R$ 14.93</td>
+                        <td class="positive">+0.31%</td>
+                        <td>1.2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WEGE3</strong></td>
+                        <td>WEG</td>
+                        <td>R$ 42.65</td>
+                        <td class="positive">+2.18%</td>
+                        <td>980K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RENT3</strong></td>
+                        <td>Localiza</td>
+                        <td>R$ 58.72</td>
+                        <td class="negative">-1.42%</td>
+                        <td>865K</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o InvestSavy</h3>
+                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="termos">Termos de Uso</a></li>
+                    <li><a href="privacidade">Política de Privacidade</a></li>
+                    <li><a href="contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/markets.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>
+
+    <main class="news-grid">
+        {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
+        {% for post in principais %}
+        <article class="news-card">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="news-image">
+            <div class="news-content">
+                {% for categoria in post.categories %}
+                <span class="news-tag {{ categoria | downcase }}">{{ categoria }}</span>
+                {% endfor %}
+                <h2 class="news-title">{{ post.title }}</h2>
+                <p class="news-excerpt">{{ post.excerpt }}</p>
+                <div class="news-meta">
+                    <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                    <a href="{{ post.url }}" class="news-link">Ler mais</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Receba análises exclusivas direto no seu e-mail</h2>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="newsletter-button">Inscrever-se</button>
+        </form>
+    </section>
+
+<!-- Ações em Destaque -->
+<section class="stocks-highlight">
+    <h2 class="stocks-title">Ações em Destaque</h2>
+    <div class="stocks-table-wrapper">
+        <div class="market-status"></div>
+        <div class="stocks-table-container">
+            <table class="stocks-table">
+                <thead>
+                    <tr>
+                        <th>TICKER</th>
+                        <th>EMPRESA</th>
+                        <th>PREÇO</th>
+                        <th>VARIAÇÃO</th>
+                        <th>VOLUME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PETR4</strong></td>
+                        <td>Petrobras</td>
+                        <td>R$ 38.75</td>
+                        <td class="positive">+1.25%</td>
+                        <td>2.3M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VALE3</strong></td>
+                        <td>Vale</td>
+                        <td>R$ 68.43</td>
+                        <td class="negative">-0.75%</td>
+                        <td>3.1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ITUB4</strong></td>
+                        <td>Itaú Unibanco</td>
+                        <td>R$ 34.52</td>
+                        <td class="positive">+0.62%</td>
+                        <td>1.8M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BBDC4</strong></td>
+                        <td>Bradesco</td>
+                        <td>R$ 19.87</td>
+                        <td class="negative">-0.23%</td>
+                        <td>2.5M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ABEV3</strong></td>
+                        <td>Ambev</td>
+                        <td>R$ 14.93</td>
+                        <td class="positive">+0.31%</td>
+                        <td>1.2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WEGE3</strong></td>
+                        <td>WEG</td>
+                        <td>R$ 42.65</td>
+                        <td class="positive">+2.18%</td>
+                        <td>980K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RENT3</strong></td>
+                        <td>Localiza</td>
+                        <td>R$ 58.72</td>
+                        <td class="negative">-1.42%</td>
+                        <td>865K</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o InvestSavy</h3>
+                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="termos">Termos de Uso</a></li>
+                    <li><a href="privacidade">Política de Privacidade</a></li>
+                    <li><a href="contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/markets.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>
+
+    <main class="news-grid">
+        {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
+        {% for post in principais %}
+        <article class="news-card">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="news-image">
+            <div class="news-content">
+                {% for categoria in post.categories %}
+                <span class="news-tag {{ categoria | downcase }}">{{ categoria }}</span>
+                {% endfor %}
+                <h2 class="news-title">{{ post.title }}</h2>
+                <p class="news-excerpt">{{ post.excerpt }}</p>
+                <div class="news-meta">
+                    <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                    <a href="{{ post.url }}" class="news-link">Ler mais</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Receba análises exclusivas direto no seu e-mail</h2>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="newsletter-button">Inscrever-se</button>
+        </form>
+    </section>
+
+<!-- Ações em Destaque -->
+<section class="stocks-highlight">
+    <h2 class="stocks-title">Ações em Destaque</h2>
+    <div class="stocks-table-wrapper">
+        <div class="market-status"></div>
+        <div class="stocks-table-container">
+            <table class="stocks-table">
+                <thead>
+                    <tr>
+                        <th>TICKER</th>
+                        <th>EMPRESA</th>
+                        <th>PREÇO</th>
+                        <th>VARIAÇÃO</th>
+                        <th>VOLUME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PETR4</strong></td>
+                        <td>Petrobras</td>
+                        <td>R$ 38.75</td>
+                        <td class="positive">+1.25%</td>
+                        <td>2.3M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VALE3</strong></td>
+                        <td>Vale</td>
+                        <td>R$ 68.43</td>
+                        <td class="negative">-0.75%</td>
+                        <td>3.1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ITUB4</strong></td>
+                        <td>Itaú Unibanco</td>
+                        <td>R$ 34.52</td>
+                        <td class="positive">+0.62%</td>
+                        <td>1.8M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BBDC4</strong></td>
+                        <td>Bradesco</td>
+                        <td>R$ 19.87</td>
+                        <td class="negative">-0.23%</td>
+                        <td>2.5M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ABEV3</strong></td>
+                        <td>Ambev</td>
+                        <td>R$ 14.93</td>
+                        <td class="positive">+0.31%</td>
+                        <td>1.2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WEGE3</strong></td>
+                        <td>WEG</td>
+                        <td>R$ 42.65</td>
+                        <td class="positive">+2.18%</td>
+                        <td>980K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RENT3</strong></td>
+                        <td>Localiza</td>
+                        <td>R$ 58.72</td>
+                        <td class="negative">-1.42%</td>
+                        <td>865K</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o InvestSavy</h3>
+                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="termos">Termos de Uso</a></li>
+                    <li><a href="privacidade">Política de Privacidade</a></li>
+                    <li><a href="contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/markets.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>
+
+    <main class="news-grid">
+        {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
+        {% for post in principais %}
+        <article class="news-card">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="news-image">
+            <div class="news-content">
+                {% for categoria in post.categories %}
+                <span class="news-tag {{ categoria | downcase }}">{{ categoria }}</span>
+                {% endfor %}
+                <h2 class="news-title">{{ post.title }}</h2>
+                <p class="news-excerpt">{{ post.excerpt }}</p>
+                <div class="news-meta">
+                    <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+                    <a href="{{ post.url }}" class="news-link">Ler mais</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Receba análises exclusivas direto no seu e-mail</h2>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="newsletter-button">Inscrever-se</button>
+        </form>
+    </section>
+
+<!-- Ações em Destaque -->
+<section class="stocks-highlight">
+    <h2 class="stocks-title">Ações em Destaque</h2>
+    <div class="stocks-table-wrapper">
+        <div class="market-status"></div>
+        <div class="stocks-table-container">
+            <table class="stocks-table">
+                <thead>
+                    <tr>
+                        <th>TICKER</th>
+                        <th>EMPRESA</th>
+                        <th>PREÇO</th>
+                        <th>VARIAÇÃO</th>
+                        <th>VOLUME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PETR4</strong></td>
+                        <td>Petrobras</td>
+                        <td>R$ 38.75</td>
+                        <td class="positive">+1.25%</td>
+                        <td>2.3M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VALE3</strong></td>
+                        <td>Vale</td>
+                        <td>R$ 68.43</td>
+                        <td class="negative">-0.75%</td>
+                        <td>3.1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ITUB4</strong></td>
+                        <td>Itaú Unibanco</td>
+                        <td>R$ 34.52</td>
+                        <td class="positive">+0.62%</td>
+                        <td>1.8M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BBDC4</strong></td>
+                        <td>Bradesco</td>
+                        <td>R$ 19.87</td>
+                        <td class="negative">-0.23%</td>
+                        <td>2.5M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ABEV3</strong></td>
+                        <td>Ambev</td>
+                        <td>R$ 14.93</td>
+                        <td class="positive">+0.31%</td>
+                        <td>1.2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WEGE3</strong></td>
+                        <td>WEG</td>
+                        <td>R$ 42.65</td>
+                        <td class="positive">+2.18%</td>
+                        <td>980K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RENT3</strong></td>
+                        <td>Localiza</td>
+                        <td>R$ 58.72</td>
+                        <td class="negative">-1.42%</td>
+                        <td>865K</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o InvestSavy</h3>
+                <p>Portal líder em notícias financeiras e análises de mercado, trazendo informações precisas e atualizadas para investidores.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="termos">Termos de Uso</a></li>
+                    <li><a href="privacidade">Política de Privacidade</a></li>
+                    <li><a href="contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/markets.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>
+
+    <main class="news-grid">
+        {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
+        {% for post in principais %}
+        <article class="news-card">
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="news-image">
+            <div class="news-content">
+                {% for categoria in post.categories %}
+                <span class=
