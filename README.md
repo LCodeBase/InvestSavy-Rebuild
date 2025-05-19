@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/LCodeBase/InvestSavy/assets/banner.png" alt="InvestSavy Banner" width="80%" />
+  <img src="https://github.com/LCodeBase/InvestSavy/assets/Logo.png" alt="InvestSavy Banner" width="80%" />
 </p>
 
 ---
@@ -68,6 +68,7 @@ bundle exec jekyll serve
 
 # Acesse via navegador:
 http://localhost:4000
+
 🤝 Contribuições
 Contribuições são bem-vindas! Siga os passos abaixo:
 
@@ -84,11 +85,19 @@ Abra um Pull Request
 📜 Licença
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
-📫 Contato
-Quer contribuir, sugerir algo ou só bater um papo?
+---
 
-✉️ Email: seu-email@example.com
+## 📫 Contato
 
-💼 LinkedIn: Seu Nome
+<p align="center">
+  <a href="mailto:leonardo.developer.figueiredo@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/✉️%20Email-leonardo.developer.figueiredo@gmail.com-blue?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <br><br>
+  <a href="https://www.linkedin.com/in/leonardo-fe-figueiredo/" target="_blank">
+    <img src="https://img.shields.io/badge/💼%20LinkedIn-Acessar%20Perfil-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+</p>
+
 
 <p align="center"> Feito com 💙 por <a href="https://github.com/LCodeBase">LCodeBase</a> </p> ```
