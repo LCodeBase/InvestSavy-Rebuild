@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 'Vendas do Varejo Registram Terceira Alta Consecutiva Impulsionadas por Emprego e Renda Recorde'
-date: 2025-05-10 00:55:00 -0300
-categories: economia
-tags: [economia, politica]
+date: 2024-02-20 00:55:00 -0300
+categories: [economia, mercados]
+tags: [varejo, consumo, economia, mercado]
 author: 'Equipe InvestSavy'
 image: /assets/images/posts/vendas-varejo-alta.png
 excerpt: 'Dados do IBGE mostram crescimento de 0,8% nas vendas do varejo em março, com destaque para produtos alimentícios, vestuário e farmácia, refletindo a resiliência do consumo das famílias.'
@@ -51,11 +51,11 @@ As <span class="highlight">vendas no varejo</span> registraram alta de <span cla
   <p class="chart-caption">Fonte: IBGE</p>
 </div>
 
-Para a XP, os dados recentes do varejo reforçaram a <span class="highlight">resiliência do consumo das famílias</span> no início de 2025, após dados preocupantes no final de 2024. Essa tendência não deverá ser revertida abruptamente, mas deve haver uma <span class="highlight">desaceleração gradual</span> nos gastos pessoais com bens ao longo deste ano.
+Para a XP, os dados recentes do varejo reforçaram a <span class="highlight">resiliência do consumo das famílias</span> no início de 2024, após dados preocupantes no final de 2023. Essa tendência não deverá ser revertida abruptamente, mas deve haver uma <span class="highlight">desaceleração gradual</span> nos gastos pessoais com bens ao longo deste ano.
 
 <div class="quote-container">
   <blockquote class="analyst-quote">
-    "Por um lado, a inflação mais alta e a política monetária contracionista terão seus efeitos. Por outro, o mercado de trabalho permanece robusto – a massa salarial real agregada deve aumentar em torno de 4,0% em 2025 – e as medidas governamentais recentemente anunciadas devem sustentar a demanda interna", afirma a XP.
+    "Por um lado, a inflação mais alta e a política monetária contracionista terão seus efeitos. Por outro, o mercado de trabalho permanece robusto – a massa salarial real agregada deve aumentar em torno de 4,0% em 2024 – e as medidas governamentais recentemente anunciadas devem sustentar a demanda interna", afirma a XP.
   </blockquote>
 </div>
 
@@ -68,7 +68,7 @@ O economista da Suno Research, Rafael Perez, destaca em sua análise que os indi
   <p>"A combinação entre um mercado de trabalho sólido e os estímulos ao consumo e ao crédito por parte do governo devem mitigar os efeitos defasados da política monetária e da desaceleração da atividade econômica", afirma Perez.</p>
 </div>
 
-Leonardo Costa, economista do ASA, afirma que "a pesquisa do varejo de março veio forte, com recuperação disseminada após um final de 2024 mais fraco."
+Leonardo Costa, economista do ASA, afirma que "a pesquisa do varejo de março veio forte, com recuperação disseminada após um final de 2023 mais fraco."
 
 ## Desempenho por setores
 
@@ -113,7 +113,7 @@ Para André Valério, economista sênior do Inter, o resultado é robusto. "Foi 
 Os dados do <span class="highlight">varejo ampliado</span>, que inclui veículos, motos e materiais de construção, tiveram uma alta de 1,9% em março, o que representa um crescimento de 1,6% no setor no primeiro trimestre. A Suno Research destaca que o desempenho mensal foi influenciado pela <span class="highlight">recuperação nas vendas de veículos e motos</span> (+1,7%) e do avanço em <span class="highlight">material de construção</span> (+0,6%).
 
 <div class="data-visualization">
-  <h4>Desempenho do Varejo Ampliado - Março/2025</h4>
+  <h4>Desempenho do Varejo Ampliado - Março/2024</h4>
   <div class="chart-horizontal">
     <div class="chart-row">
       <span class="sector-name">Veículos e Motos</span>
@@ -137,7 +137,7 @@ Os dados do <span class="highlight">varejo ampliado</span>, que inclui veículos
   <p class="chart-caption">Fonte: IBGE</p>
 </div>
 
-## Perspectivas para 2025
+## Perspectivas para 2024
 
 Igor Cadilhac, economista do PicPay, avalia que embora o índice de atividade tenha atingido um novo recorde histórico, o <span class="highlight">ritmo de expansão deve desacelerar</span>. Isso deve ocorrer pela redução dos estímulos fiscais e de crédito, além do impacto da inflação e dos juros elevados.
 
@@ -151,14 +151,14 @@ A Goldman Sachs prevê que a atividade varejista vai se beneficiar das <span cla
 
 ## Crescimento do PIB
 
-Diante dos números positivos, a XP mantém a projeção de <span class="highlight">crescimento do PIB no 1º trimestre de 2025 em 1,5%</span> em relação ao trimestre anterior (3% em relação ao ano anterior). Para o ano completo, a expectativa é de um crescimento de 2,2%, impulsionado principalmente pelo consumo das famílias.
+Diante dos números positivos, a XP mantém a projeção de <span class="highlight">crescimento do PIB no 1º trimestre de 2024 em 1,5%</span> em relação ao trimestre anterior (3% em relação ao ano anterior). Para o ano completo, a expectativa é de um crescimento de 2,2%, impulsionado principalmente pelo consumo das famílias.
 
 <div class="data-visualization">
-  <h4>Projeções para o PIB Brasileiro em 2025</h4>
+  <h4>Projeções para o PIB Brasileiro em 2024</h4>
   <div class="projections-table">
     <div class="table-row header">
       <div class="table-cell">Instituição</div>
-      <div class="table-cell">PIB 2025</div>
+      <div class="table-cell">PIB 2024</div>
       <div class="table-cell">Consumo das Famílias</div>
     </div>
     <div class="table-row">

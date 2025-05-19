@@ -29,9 +29,16 @@
             <li><a href="/tecnologia" class="nav-link">Tecnologia</a></li>
             <li><a href="/energia" class="nav-link">Energia</a></li>
         </ul>
-        <div class="nav-search">
-            <input type="search" placeholder="Buscar...">
-            <button type="button">🔍</button>
+        <div class="search-bar">
+            <form class="search-form" id="searchForm">
+                <input type="text" class="search-input" placeholder="Buscar notícias..." id="searchInput">
+                <button type="submit" class="search-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+            </form>
+            <div class="search-results" id="searchResults"></div>
         </div>
     </nav>
 
@@ -59,60 +66,15 @@
         </div>
     </div>
 
-    <!-- Hero Section da Categoria -->
+    <!-- Hero da Categoria -->
     <section class="category-hero">
-        <div class="container">
-            <h1 class="category-title">Destaques</h1>
-            <p class="category-description">As principais notícias e análises do mercado financeiro, selecionadas pela nossa equipe editorial.</p>
-        </div>
+        <h1 class="category-title">Destaques</h1>
+        <p class="category-description">As principais notícias e análises do mercado financeiro</p>
     </section>
 
-    <!-- Conteúdo Principal -->
-    <main class="news-grid">
-        <!-- Notícia 1 -->
-        <article class="news-card featured">
-            <img src="/assets/images/news1.jpg" alt="Notícia em Destaque" class="news-image">
-            <div class="news-content">
-                <span class="news-tag destaque">Destaques</span>
-                <span class="news-tag mercados">Mercados</span>
-                <h2 class="news-title">Ibovespa atinge nova máxima histórica</h2>
-                <p class="news-excerpt">Índice principal da B3 ultrapassa 120 mil pontos pela primeira vez, impulsionado por resultados corporativos...</p>
-                <div class="news-meta">
-                    <span class="news-date">15 de Março, 2024</span>
-                    <a href="/noticia/ibovespa-recorde" class="news-link">Ler mais</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Notícia 2 -->
-        <article class="news-card">
-            <img src="/assets/images/news2.jpg" alt="Notícia em Destaque" class="news-image">
-            <div class="news-content">
-                <span class="news-tag destaque">Destaques</span>
-                <span class="news-tag economia">Economia</span>
-                <h2 class="news-title">BC mantém Selic em 11,75% ao ano</h2>
-                <p class="news-excerpt">Comitê de Política Monetária mantém taxa básica de juros e sinaliza manutenção do ciclo...</p>
-                <div class="news-meta">
-                    <span class="news-date">14 de Março, 2024</span>
-                    <a href="/noticia/copom-selic" class="news-link">Ler mais</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Notícia 3 -->
-        <article class="news-card">
-            <img src="/assets/images/news3.jpg" alt="Notícia em Destaque" class="news-image">
-            <div class="news-content">
-                <span class="news-tag destaque">Destaques</span>
-                <span class="news-tag tecnologia">Tecnologia</span>
-                <h2 class="news-title">Nova geração de chips revoluciona mercado</h2>
-                <p class="news-excerpt">Fabricantes anunciam avanços significativos em processadores com tecnologia de 2nm...</p>
-                <div class="news-meta">
-                    <span class="news-date">13 de Março, 2024</span>
-                    <a href="/noticia/chips-2nm" class="news-link">Ler mais</a>
-                </div>
-            </div>
-        </article>
+    <!-- Grid de Notícias -->
+    <main class="news-grid" id="newsGrid">
+        <!-- As notícias serão carregadas aqui via JavaScript -->
     </main>
 
     <!-- Newsletter -->
@@ -152,5 +114,6 @@
 
     <script src="/assets/js/markets.js"></script>
     <script src="/assets/js/news.js"></script>
+    <script src="/assets/js/search.js"></script>
 </body>
 </html>

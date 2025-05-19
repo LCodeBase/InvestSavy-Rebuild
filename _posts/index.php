@@ -1,40 +1,35 @@
 <?php
 header('Content-Type: application/json');
 
-function parseMarkdownFile($file) {
+// Função para ler arquivos Markdown
+function readMarkdownFile($file) {
     $content = file_get_contents($file);
+    if (!$content) return null;
 
     // Extrai o front matter
-    preg_match('/^---\s*\n(.*?)\n---\s*\n(.*)/s', $content, $matches);
-
-    if (count($matches) < 3) {
-        return null;
-    }
+    preg_match('/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)/', $content, $matches);
+    if (!$matches) return null;
 
     $frontMatter = $matches[1];
-    $body = $matches[2];
+    $content = $matches[2];
 
-    // Parse o front matter
+    // Processa o front matter
     $metadata = [];
-    $lines = explode("\n", $frontMatter);
-    foreach ($lines as $line) {
+    foreach (explode("\n", $frontMatter) as $line) {
         if (empty($line)) continue;
+        list($key, $value) = explode(':', $line, 2);
+        $key = trim($key);
+        $value = trim($value);
 
-        if (preg_match('/^([^:]+):\s*(.*)$/', $line, $lineMatches)) {
-            $key = trim($lineMatches[1]);
-            $value = trim($lineMatches[2]);
+        // Remove aspas
+        $value = trim($value, "' \t\n\r\0\x0B");
 
-            // Remove aspas se existirem
-            $value = trim($value, "'\"");
-
-            // Parse arrays
-            if (strpos($value, '[') === 0) {
-                $value = str_replace(['[', ']'], '', $value);
-                $value = array_map('trim', explode(',', $value));
-            }
-
-            $metadata[$key] = $value;
+        // Processa arrays
+        if (strpos($value, '[') === 0 && strpos($value, ']') === strlen($value) - 1) {
+            $value = array_map('trim', explode(',', substr($value, 1, -1)));
         }
+
+        $metadata[$key] = $value;
     }
 
     // Gera o slug do título
@@ -50,17 +45,16 @@ function parseMarkdownFile($file) {
         'author' => $metadata['author'],
         'image' => $metadata['image'],
         'excerpt' => $metadata['excerpt'],
-        'content' => $body,
+        'content' => $content,
         'slug' => $slug
     ];
 }
 
-// Lê todos os arquivos .md do diretório
+// Lê todos os arquivos Markdown na pasta
 $posts = [];
-$files = glob('*.md');
-
+$files = glob(__DIR__ . '/*.md');
 foreach ($files as $file) {
-    $post = parseMarkdownFile($file);
+    $post = readMarkdownFile($file);
     if ($post) {
         $posts[] = $post;
     }

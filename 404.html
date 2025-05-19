@@ -7,13 +7,11 @@
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link rel="stylesheet" href="/assets/css/style.css">
     <script>
-        // Verifica se a URL é uma notícia
+        // Redireciona para a página correta baseado na URL
         const path = window.location.pathname;
         if (path.startsWith('/noticia/')) {
-            // Redireciona para a página de notícia
-            window.location.href = '/noticia.html' + path;
+            window.location.href = '/noticia.html?slug=' + path.split('/').pop();
         } else {
-            // Redireciona para a página inicial
             window.location.href = '/';
         }
     </script>
