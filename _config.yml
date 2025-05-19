@@ -1,7 +1,7 @@
 # Configurações do Site
 title: InvestSavy
 description: Portal líder em notícias financeiras e análises de mercado
-baseurl: '' # Mantenha vazio para desenvolvimento local
+baseurl: '/InvestSavy' # Mantenha vazio para desenvolvimento local
 url: 'https://lcodebase.github.io/InvestSavy/'
 
 # Configurações de Build
