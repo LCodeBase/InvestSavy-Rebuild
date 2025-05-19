@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notícia - InvestSavy</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="{{ '../assets/images/Logo1.png' | relative_url }}">
+    <link rel="stylesheet" href="{{ '../assets/css/style.css' | relative_url }}">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <header class="header">
         <nav class="nav-primary">
             <div class="container">
-                <a href="/" class="logo">InvestSavy</a>
+                <a href="{{' | relative_url }}" class="logo">InvestSavy</a>
                 <div class="nav-links">
-                    <a href="/login" class="nav-link">Login</a>
-                    <a href="/assine" class="nav-link">Assine</a>
-                    <a href="/contato" class="nav-link">Contato</a>
+                    <a href="{{ '../login' | relative_url }}" class="nav-link">Login</a>
+                    <a href="{{ '../assine' | relative_url }}" class="nav-link">Assine</a>
+                    <a href="{{ '../contato' | relative_url }}" class="nav-link">Contato</a>
                 </div>
             </div>
         </nav>
         <nav class="nav-secondary">
             <div class="container">
-                <a href="/destaques" class="nav-link">Destaques</a>
-                <a href="/mercados" class="nav-link">Mercados</a>
-                <a href="/economia" class="nav-link">Economia</a>
-                <a href="/politica" class="nav-link">Política</a>
-                <a href="/tecnologia" class="nav-link">Tecnologia</a>
-                <a href="/energia" class="nav-link">Energia</a>
+                <a href="{{ '../destaques' | relative_url }}" class="nav-link">Destaques</a>
+                <a href="{{ '../mercados' | relative_url }}" class="nav-link">Mercados</a>
+                <a href="{{ '../economia' | relative_url }}" class="nav-link">Economia</a>
+                <a href="{{ '../politica' | relative_url }}" class="nav-link">Política</a>
+                <a href="{{ '../tecnologia' | relative_url }}" class="nav-link">Tecnologia</a>
+                <a href="{{ '../energia' | relative_url }}" class="nav-link">Energia</a>
             </div>
         </nav>
     </header>
@@ -77,9 +77,9 @@
                 <div class="footer-section">
                     <h3>Links Rápidos</h3>
                     <ul>
-                        <li><a href="/termos">Termos de Uso</a></li>
-                        <li><a href="/privacidade">Política de Privacidade</a></li>
-                        <li><a href="/contato">Fale Conosco</a></li>
+                        <li><a href="../termos">Termos de Uso</a></li>
+                        <li><a href="../privacidade">Política de Privacidade</a></li>
+                        <li><a href="../contato">Fale Conosco</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -97,8 +97,8 @@
         </div>
     </footer>
 
-    <script src="assets/js/markets.js"></script>
-    <script src="assets/js/news.js"></script>
+    <script src="../assets/js/markets.js"></script>
+    <script src="../assets/js/news.js"></script>
     <script>
         // Função para carregar e exibir a notícia individual
         async function loadArticle() {

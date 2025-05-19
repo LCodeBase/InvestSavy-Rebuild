@@ -26,30 +26,30 @@ $content = $parsedown->text($post['content']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($post['title']); ?> - InvestSavy</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/images/Logo1.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header Principal -->
     <header class="header">
-        <a href="/" class="logo">InvestSavy</a>
+        <a href="../index.html" class="logo">InvestSavy</a>
         <div class="header-actions">
-            <a href="/login" class="header-action">Login</a>
-            <a href="/assine" class="header-action">Assine</a>
-            <a href="/contato" class="header-action">Contato</a>
+            <a href="../login" class="header-action">Login</a>
+            <a href="../assine" class="header-action">Assine</a>
+            <a href="../contato" class="header-action">Contato</a>
         </div>
     </header>
 
     <!-- Barra de Navegação Secundária -->
     <nav class="nav-bar">
         <ul class="nav-menu">
-            <li><a href="/destaques" class="nav-link">Destaques</a></li>
-            <li><a href="/mercados" class="nav-link">Mercados</a></li>
-            <li><a href="/economia" class="nav-link">Economia</a></li>
-            <li><a href="/politica" class="nav-link">Política</a></li>
-            <li><a href="/tecnologia" class="nav-link">Tecnologia</a></li>
-            <li><a href="/energia" class="nav-link">Energia</a></li>
+            <li><a href="../destaques" class="nav-link">Destaques</a></li>
+            <li><a href="../mercados" class="nav-link">Mercados</a></li>
+            <li><a href="../economia" class="nav-link">Economia</a></li>
+            <li><a href="../politica" class="nav-link">Política</a></li>
+            <li><a href="../tecnologia" class="nav-link">Tecnologia</a></li>
+            <li><a href="../energia" class="nav-link">Energia</a></li>
         </ul>
         <div class="nav-search">
             <input type="search" placeholder="Buscar...">
@@ -99,9 +99,9 @@ $content = $parsedown->text($post['content']);
             <div class="footer-section">
                 <h3>Links Rápidos</h3>
                 <ul class="footer-links">
-                    <li><a href="/termos">Termos de Uso</a></li>
-                    <li><a href="/privacidade">Política de Privacidade</a></li>
-                    <li><a href="/contato">Fale Conosco</a></li>
+                    <li><a href="../termos">Termos de Uso</a></li>
+                    <li><a href="../privacidade">Política de Privacidade</a></li>
+                    <li><a href="../contato">Fale Conosco</a></li>
                 </ul>
             </div>
             <div class="footer-section">

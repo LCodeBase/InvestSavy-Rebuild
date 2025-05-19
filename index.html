@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InvestSavy - Portal de Notícias Financeiras</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/Logo1.png">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/Logo1.png' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -16,21 +16,21 @@
         </a>
 
         <div class="header-actions">
-            <a href="login" class="header-action">Login</a>
-            <a href="assine" class="header-action">Assine</a>
-            <a href="contato" class="header-action">Contato</a>
+            <a href="{{ '/login' | relative_url }}" class="header-action">Login</a>
+            <a href="{{ '/assine' | relative_url }}" class="header-action">Assine</a>
+            <a href="{{ '/contato' | relative_url }}" class="header-action">Contato</a>
         </div>
     </header>
 
     <!-- Barra de Navegação Secundária -->
     <nav class="nav-bar">
         <ul class="nav-menu">
-            <li><a href="destaques" class="nav-link">Destaques</a></li>
-            <li><a href="mercados" class="nav-link">Mercados</a></li>
-            <li><a href="economia" class="nav-link">Economia</a></li>
-            <li><a href="politica" class="nav-link">Política</a></li>
-            <li><a href="tecnologia" class="nav-link">Tecnologia</a></li>
-            <li><a href="energia" class="nav-link">Energia</a></li>
+            <li><a href="{{ '/destaques' | relative_url }}" class="nav-link">Destaques</a></li>
+            <li><a href="{{ '/mercados' | relative_url }}" class="nav-link">Mercados</a></li>
+            <li><a href="{{ '/economia' | relative_url }}" class="nav-link">Economia</a></li>
+            <li><a href="{{ '/politica' | relative_url }}" class="nav-link">Política</a></li>
+            <li><a href="{{ '/tecnologia' | relative_url }}" class="nav-link">Tecnologia</a></li>
+            <li><a href="{{ '/energia' | relative_url }}" class="nav-link">Energia</a></li>
         </ul>
 
     </nav>
