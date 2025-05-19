@@ -4,37 +4,40 @@ title: Destaques
 ---
 
 <section class="hero">
-    <h1 class="hero-title">Destaques</h1>
-    <p class="hero-subtitle">As principais notícias do momento</p>
-    <link rel="icon" type="image/x-icon" href="{{ '../assets/images/Logo1.png' | relative_url }}">
-    <link rel="stylesheet" href="{{ '../assets/css/style.css' | relative_url }}">
+  <h1 class="hero-title">Destaques</h1>
+  <p class="hero-subtitle">As principais notícias do momento</p>
+  <link rel="icon" type="image/x-icon" href="{{ '/assets/images/Logo1.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </section>
+
 <div class="category-container">
-    <!-- Grid de Notícias -->
-    <div class="news-grid-infomoney">
-        {% assign destaques_posts = site.posts | where: "featured", true %}
-        {% for post in destaques_posts %}
-        <a href="{{ post.url | relative_url }}" class="news-card-infomoney">
-            <div class="news-image-container">
-                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="news-image-infomoney">
-            </div>
-            <div class="news-content-infomoney">
-                <div class="news-categories">
-                    {% for category in post.categories %}
-                    <span class="news-category" data-category="{{ category | downcase }}">{{ category }}</span>
-                    {% endfor %}
-                </div>
-                <h2 class="news-title-infomoney">{{ post.title }}</h2>
-                <div class="news-meta-infomoney">
-                    <span class="news-time">{{ post.date | date: "%d/%m/%Y às %H:%M" }}</span>
-                </div>
-            </div>
-        </a>
-        {% endfor %}
-    </div>
+  <!-- Grid de Notícias -->
+  <div class="news-grid-infomoney">
+    {% assign destaques_posts = site.posts | where: "featured", true %}
+    {% for post in destaques_posts %}
+    <a href="{{ post.url | relative_url }}" class="news-card-infomoney">
+      <div class="news-image-container">
+        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="news-image-infomoney">
+      </div>
+      <div class="news-content-infomoney">
+        <div class="news-categories">
+          {% for category in post.categories %}
+          <span class="news-category" data-category="{{ category | downcase }}">{{ category }}</span>
+          {% endfor %}
+        </div>
+        <h2 class="news-title-infomoney">{{ post.title }}</h2>
+        <div class="news-meta-infomoney">
+          <span class="news-time">{{ post.date | date: "%d/%m/%Y às %H:%M" }}</span>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
 </div>
-<script src="{{ '../assets/js/markets.js' | relative_url }}"></script>
-<script src="{{ '../assets/js/news.js' | relative_url }}"></script>
-<script src="{{ '../assets/js/search.js' | relative_url }}"></script>
-<img src="{{ '../assets/images/news/ibovespa-alta.jpg' | relative_url }}" alt="Notícia Principal" class="news-image">
-<img src="{{ '../assets/images/news/selic-mantida.jpg' | relative_url }}" alt="Notícia de Economia" class="news-image">
+
+<script src="{{ '/assets/js/markets.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/news.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+
+<img src="{{ '/assets/images/news/ibovespa-alta.jpg' | relative_url }}" alt="Notícia Principal" class="news-image">
+<img src="{{ '/assets/images/news/selic-mantida.jpg' | relative_url }}" alt="Notícia de Economia" class="news-image">
