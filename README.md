@@ -113,4 +113,4 @@ Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes
   
 
 
-<p align="center"> Feito com 💙 por <a href="https://github.com/LCodeBase">LCodeBase</a> </p>
+<p align="center"> Feito por <a href="https://github.com/LCodeBase">LCodeBase</a> </p>
