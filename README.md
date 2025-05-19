@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/LCodeBase/InvestSavy/assets/Logo.png" alt="InvestSavy Banner" width="80%" />
+  <img src="https://github.com/LCodeBase/InvestSavy/blob/main/assets/images/Logo.png" alt="InvestSavy Banner" width="80%" />
 </p>
 
 ---
