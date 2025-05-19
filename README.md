@@ -1,35 +1,46 @@
-##📈 InvestSavy
-InvestSavy é um portal moderno de notícias financeiras e análises de mercado, desenvolvido com HTML, CSS e JavaScript puro, utilizando o Jekyll para gerenciamento de conteúdo.
+<h1 align="center">📈 InvestSavy</h1>
 
-<!-- Substitua pelo caminho correto da imagem -->
+<p align="center">
+  <strong>Seu portal moderno de notícias e análises financeiras</strong><br>
+  Desenvolvido com <code>HTML</code>, <code>CSS</code> e <code>JavaScript</code> puro, utilizando <code>Jekyll</code> como gerador de site estático.
+</p>
 
-🚀 Funcionalidades
-✅ Design Responsivo: Compatível com dispositivos móveis, tablets e desktops.
+<p align="center">
+  <img src="https://github.com/LCodeBase/InvestSavy/assets/banner.png" alt="InvestSavy Banner" width="80%" />
+</p>
 
-📊 Cotações em Tempo Real: Atualizações automáticas de índices e ativos financeiros.
+---
 
-📰 Sistema de Publicação de Notícias: Organização por categorias como economia, política, tecnologia, energia e mercados.
+## 🚀 Funcionalidades
 
-🔍 Busca Integrada: Encontre rapidamente notícias e análises específicas.
+<div align="center">
 
-📬 Página de Assinatura: Captura de e-mails para newsletters e atualizações.
+| Recurso | Descrição |
+|--------|-----------|
+| ✅ **Design Responsivo** | Compatível com todos os dispositivos |
+| 📊 **Cotações em Tempo Real** | Dados atualizados dos mercados |
+| 📰 **Publicação de Notícias** | Categorias como economia, política e mais |
+| 🔍 **Busca Integrada** | Encontre conteúdos com facilidade |
+| 📬 **Página de Assinatura** | Captura de e-mails para newsletters |
+| 📄 **Erro 404 Personalizado** | Experiência aprimorada para o usuário |
 
-📄 404 Personalizada: Página de erro personalizada para melhorar a experiência do usuário.
+</div>
 
-🧱 Estrutura do Projeto
-bash
-Copiar
-Editar
+---
+
+## 🧱 Estrutura do Projeto
+
+```bash
 InvestSavy/
 ├── _layouts/           # Layouts base do Jekyll
 ├── _posts/             # Publicações de notícias
 ├── assets/             # Imagens, estilos e scripts
-├── destaques/          # Notícias em destaque
 ├── economia/           # Categoria: Economia
 ├── energia/            # Categoria: Energia
 ├── mercados/           # Categoria: Mercados
 ├── politica/           # Categoria: Política
 ├── tecnologia/         # Categoria: Tecnologia
+├── destaques/          # Notícias em destaque
 ├── assine.html         # Página de assinatura
 ├── contato.html        # Página de contato
 ├── noticia.html        # Template de notícia
@@ -39,51 +50,45 @@ InvestSavy/
 ├── Gemfile             # Dependências do Ruby
 ├── package.json        # Dependências do Node.js
 └── README.md           # Documentação do projeto
-⚙️ Tecnologias Utilizadas
-Frontend: HTML5, CSS3, JavaScript Vanilla
-
-Gerenciador de Conteúdo: Jekyll
-
-Estilização: CSS puro (sem frameworks)
-
-📦 Instalação e Execução Local
-Clone o repositório:
-
+🧰 Tecnologias Utilizadas
+<p align="center"> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" /> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" /> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" /> <img src="https://img.shields.io/badge/Jekyll-CC0000?style=flat-square&logo=jekyll&logoColor=white" /> <img src="https://img.shields.io/badge/GitHub%20Pages-222?style=flat-square&logo=github&logoColor=white" /> </p>
+📦 Como Executar Localmente
 bash
 Copiar
 Editar
+# Clone o repositório
 git clone https://github.com/LCodeBase/InvestSavy.git
 cd InvestSavy
-Instale as dependências do Jekyll:
 
-Certifique-se de ter o Ruby e o Bundler instalados.
-
-bash
-Copiar
-Editar
+# Instale dependências do Jekyll
 bundle install
-Inicie o servidor local:
 
-bash
-Copiar
-Editar
+# Inicie o servidor local
 bundle exec jekyll serve
-Acesse o site:
 
-Abra o navegador e vá para http://localhost:4000.
+# Acesse via navegador:
+http://localhost:4000
+🤝 Contribuições
+Contribuições são bem-vindas! Siga os passos abaixo:
 
-📁 Licença
-Este projeto está licenciado sob a MIT License.
+Faça um fork do projeto
 
-🤝 Contribuindo
-Contribuições são bem-vindas! Se você deseja sugerir melhorias, corrigir bugs ou adicionar novas funcionalidades:
+Crie uma branch (git checkout -b feature/nova-funcionalidade)
 
-Fork este repositório.
+Commit suas mudanças (git commit -m 'feat: nova funcionalidade')
 
-Crie uma nova branch: git checkout -b feature/nova-funcionalidade.
+Push para a branch (git push origin feature/nova-funcionalidade)
 
-Faça suas alterações e commit: git commit -m 'Adiciona nova funcionalidade'.
+Abra um Pull Request
 
-Envie para o seu fork: git push origin feature/nova-funcionalidade.
+📜 Licença
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
-Abra um Pull Request.
+📫 Contato
+Quer contribuir, sugerir algo ou só bater um papo?
+
+✉️ Email: seu-email@example.com
+
+💼 LinkedIn: Seu Nome
+
+<p align="center"> Feito com 💙 por <a href="https://github.com/LCodeBase">LCodeBase</a> </p> ```
