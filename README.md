@@ -50,6 +50,7 @@ InvestSavy/
 ├── Gemfile             # Dependências do Ruby
 ├── package.json        # Dependências do Node.js
 └── README.md           # Documentação do projeto
+```
 🧰 Tecnologias Utilizadas
 <p align="center"> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" /> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" /> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" /> <img src="https://img.shields.io/badge/Jekyll-CC0000?style=flat-square&logo=jekyll&logoColor=white" /> <img src="https://img.shields.io/badge/GitHub%20Pages-222?style=flat-square&logo=github&logoColor=white" /> </p>
 📦 Como Executar Localmente
