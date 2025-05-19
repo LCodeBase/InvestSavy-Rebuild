@@ -6,7 +6,198 @@
     <title>Assine InvestSavy - Portal de Notícias Financeiras</title>
     <link rel="icon" type="image/x-icon" href="assets/images/Logo1.png" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      /* Estilos para a página de Assinatura */
+      .subscribe-content {
+        padding: 4rem 2rem;
+        background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .subscribe-title {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .subscribe-subtitle {
+        text-align: center;
+        color: #666;
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .plans-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+
+      .plan-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        position: relative;
+        border: 1px solid #e1e1e1;
+      }
+
+      .plan-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .plan-card.featured {
+        border: 2px solid #6c5ce7;
+        transform: scale(1.05);
+      }
+
+      .plan-card.featured:hover {
+        transform: scale(1.05) translateY(-5px);
+      }
+
+      .plan-badge {
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        background: #6c5ce7;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .plan-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .plan-header h2 {
+        color: #2c3e50;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .plan-price {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        font-weight: 700;
+      }
+
+      .plan-price .period {
+        font-size: 1rem;
+        color: #666;
+        font-weight: 400;
+      }
+
+      .plan-savings {
+        color: #27ae60;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      .plan-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2rem 0;
+      }
+
+      .plan-features li {
+        padding: 0.8rem 0;
+        color: #555;
+        border-bottom: 1px solid #eee;
+      }
+
+      .plan-features li:last-child {
+        border-bottom: none;
+      }
+
+      .plan-button {
+        display: block;
+        text-align: center;
+        background: #6c5ce7;
+        color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s ease;
+      }
+
+      .plan-button:hover {
+        background: #5b4bc4;
+      }
+
+      .subscribe-features {
+        text-align: center;
+        padding: 4rem 0;
+      }
+
+      .subscribe-features h2 {
+        color: #2c3e50;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-item {
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-item h3 {
+        color: #2c3e50;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature-item p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Responsividade */
+      @media (max-width: 768px) {
+        .subscribe-content {
+          padding: 2rem 1rem;
+        }
+
+        .subscribe-title {
+          font-size: 2rem;
+        }
+
+        .plans-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .plan-card.featured {
+          transform: none;
+        }
+
+        .plan-card.featured:hover {
+          transform: translateY(-5px);
+        }
+      }
+    </style>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -15,7 +206,9 @@
   <body>
     <!-- Header Principal -->
     <header class="header">
-      <a href="index.html" class="logo">InvestSavy</a>
+      <a href="index.html" class="logo">
+        Invest<span style="margin-left: -8.5px; color: blueviolet">Savy</span>
+      </a>
       <div class="header-actions">
         <a href="login.html" class="header-action">Login</a>
         <a href="assine.html" class="header-action">Assine</a>
