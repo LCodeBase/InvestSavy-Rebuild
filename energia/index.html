@@ -55,7 +55,7 @@ title: Energia
 <main class="news-grid">
     {% for post in site.energia %}
     <article class="news-card">
-        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="news-image">
+        <img src="../assets/images/news/ibovespa-alta.jpg" alt="Notícia Principal" class="news-image">
         <div class="news-content">
             <span class="news-tag energia">Energia</span>
             {% if post.categories %}
@@ -73,3 +73,7 @@ title: Energia
     </article>
     {% endfor %}
 </main>
+<img src="../assets/images/news/selic-mantida.jpg" alt="Notícia de Economia" class="news-image">
+<script src="../assets/js/markets.js"></script>
+<script src="../assets/js/news.js"></script>
+<script src="../assets/js/search.js"></script>
