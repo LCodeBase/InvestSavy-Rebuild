@@ -237,8 +237,11 @@ body {
 
 .news-image {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
+    height: 180px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+    padding: 10px;
 }
 
 .news-content {
@@ -693,4 +696,478 @@ body {
         font-size: 1rem;
         padding: 0.7rem 1.2rem;
     }
+}
+
+/* Estilos para as páginas de categoria */
+.category-header {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+
+.category-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.category-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+}
+
+.category-title h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.category-description {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Grid de posts da categoria */
+.category-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.category-post {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.category-post:hover {
+    transform: translateY(-5px);
+}
+
+.category-post-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+.category-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.category-post:hover .category-post-image img {
+    transform: scale(1.05);
+}
+
+.category-post-content {
+    padding: 1.5rem;
+}
+
+.category-post-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.category-post-excerpt {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.category-post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.category-post-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.category-post-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.category-post-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .category-header {
+        height: 200px;
+    }
+
+    .category-title h1 {
+        font-size: 2rem;
+    }
+
+    .category-posts {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .category-post-image {
+        height: 150px;
+    }
+}
+
+/* Ajuste para as tags */
+.post-tags {
+    margin: 2rem 0;
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+}
+
+.post-tag {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-transform: capitalize;
+}
+
+/* Remover duplicatas de tags */
+.post-tag:not(:first-of-type) {
+    display: none;
+}
+
+.post-tag[data-category="politica"] {
+    background-color: #fce4ec;
+    color: #c2185b;
+    border-color: #f8bbd0;
+}
+
+.post-tag[data-category="tecnologia"] {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+    border-color: #e1bee7;
+}
+
+.post-tag[data-category="mercados"] {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    border-color: #bbdefb;
+}
+
+.post-tag[data-category="economia"] {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-color: #c8e6c9;
+}
+
+.post-tag[data-category="energia"] {
+    background-color: #fff3e0;
+    color: #f57c00;
+    border-color: #ffe0b2;
+}
+
+@media (max-width: 768px) {
+    .news-image,
+    .category-post-image {
+        height: 150px;
+    }
+}
+
+/* Estilos InfoMoney */
+.category-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.category-header {
+    margin-bottom: 2rem;
+}
+
+.category-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.category-tabs {
+    display: flex;
+    gap: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1rem;
+}
+
+.category-tabs a {
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.category-tabs a.active {
+    color: #333;
+}
+
+.category-tabs a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+}
+
+.news-grid-infomoney {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.news-card-infomoney {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.news-card-infomoney:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.news-card-infomoney:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(156, 39, 176, 0.3);
+}
+
+.news-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-image-infomoney {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-card-infomoney:hover .news-image-infomoney {
+    transform: scale(1.05);
+}
+
+.news-content-infomoney {
+    padding: 1rem;
+}
+
+.news-category {
+    display: inline-block;
+    color: #fff;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    background-color: #9C27B0;
+    font-weight: 500;
+}
+
+.news-title-infomoney {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    text-decoration: none;
+}
+
+.news-card-infomoney:hover .news-title-infomoney {
+    color: #9C27B0;
+}
+
+.news-meta-infomoney {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.news-time {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #666;
+}
+
+.news-time::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background-color: #666;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+/* Cores específicas para cada categoria */
+.news-category[data-category="politica"] {
+    background-color: #9C27B0;
+}
+
+.news-category[data-category="economia"] {
+    background-color: #2e7d32;
+}
+
+.news-category[data-category="mercados"] {
+    background-color: #1976d2;
+}
+
+.news-category[data-category="tecnologia"] {
+    background-color: #f57c00;
+}
+
+.news-category[data-category="energia"] {
+    background-color: #2196F3;
+}
+
+@media (max-width: 768px) {
+    .category-tabs {
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+
+    .category-tabs a {
+        white-space: nowrap;
+    }
+
+    .news-grid-infomoney {
+        grid-template-columns: 1fr;
+    }
+
+    .news-image-container {
+        height: 180px;
+    }
+}
+
+.news-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.news-category {
+    display: inline-block;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    background-color: #9C27B0;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* Cores específicas para cada categoria */
+.news-category[data-category="politica"] {
+    background-color: #9C27B0;
+}
+
+.news-category[data-category="economia"] {
+    background-color: #2e7d32;
+}
+
+.news-category[data-category="mercados"] {
+    background-color: #1976d2;
+}
+
+.news-category[data-category="tecnologia"] {
+    background-color: #f57c00;
+}
+
+.news-category[data-category="energia"] {
+    background-color: #2196F3;
+}
+
+/* Ajuste para o post individual */
+.post-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+}
+
+.post-category {
+    display: inline-block;
+    color: #fff;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-category[data-category="politica"] {
+    background-color: #9C27B0;
+}
+
+.post-category[data-category="economia"] {
+    background-color: #2e7d32;
+}
+
+.post-category[data-category="mercados"] {
+    background-color: #1976d2;
+}
+
+.post-category[data-category="tecnologia"] {
+    background-color: #f57c00;
+}
+
+.post-category[data-category="energia"] {
+    background-color: #2196F3;
 }

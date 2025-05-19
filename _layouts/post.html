@@ -34,10 +34,10 @@ layout: default
     </div>
 
     <!-- Tags do Post -->
-    {% if page.tags %}
-    <div class="post-tags">
-        {% for tag in page.tags %}
-        <span class="post-tag">{{ tag }}</span>
+    {% if page.categories %}
+    <div class="post-categories">
+        {% for category in page.categories %}
+        <span class="post-category" data-category="{{ category | downcase }}">{{ category }}</span>
         {% endfor %}
     </div>
     {% endif %}
@@ -147,16 +147,60 @@ layout: default
 .post-tags {
     margin: 2rem 0;
     display: flex;
-    gap: 0.5rem;
+    gap: 0.8rem;
     flex-wrap: wrap;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
 }
 
 .post-tag {
-    background-color: var(--background-secondary);
-    color: var(--text-secondary);
-    padding: 0.3rem 0.8rem;
-    border-radius: 4px;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
     font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.post-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #dee2e6;
+}
+
+/* Cores específicas para diferentes tipos de tags */
+.post-tag[data-category="mercados"] {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    border-color: #bbdefb;
+}
+
+.post-tag[data-category="economia"] {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-color: #c8e6c9;
+}
+
+.post-tag[data-category="tecnologia"] {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+    border-color: #e1bee7;
+}
+
+.post-tag[data-category="energia"] {
+    background-color: #fff3e0;
+    color: #f57c00;
+    border-color: #ffe0b2;
+}
+
+.post-tag[data-category="politica"] {
+    background-color: #fce4ec;
+    color: #c2185b;
+    border-color: #f8bbd0;
 }
 
 .post-share {
@@ -265,6 +309,16 @@ layout: default
 
     .related-posts-grid {
         grid-template-columns: 1fr;
+    }
+
+    .post-tags {
+        padding: 0.8rem;
+        gap: 0.6rem;
+    }
+
+    .post-tag {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
     }
 }
 </style>
