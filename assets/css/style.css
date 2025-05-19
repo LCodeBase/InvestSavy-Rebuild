@@ -49,6 +49,13 @@ body {
     text-decoration: none;
 }
 
+.logo img {
+    height: 30px;
+    max-width: 100%;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
 .header-actions {
     display: flex;
     align-items: center;
