@@ -4,76 +4,90 @@ title: Energia
 ---
 
 <section class="hero">
-    <h1 class="hero-title">Energia</h1>
-    <p class="hero-subtitle">Notícias e análises sobre o setor de energia</p>
+  <h1 class="hero-title">Energia</h1>
+  <p class="hero-subtitle">Notícias e análises sobre o setor de energia</p>
 </section>
 <div class="category-container">
-    <!-- Grid de Notícias -->
-    <div class="news-grid-infomoney">
-        {% assign energia_posts = site.posts | where: "categories", "Energia" %}
-        {% for post in energia_posts %}
-        <a href="{{ post.url | relative_url }}" class="news-card-infomoney">
-            <div class="news-image-container">
-                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="news-image-infomoney">
-            </div>
-            <div class="news-content-infomoney">
-                <div class="news-categories">
-                    {% for category in post.categories %}
-                    <span class="news-category" data-category="{{ category | downcase }}">{{ category }}</span>
-                    {% endfor %}
-                </div>
-                <h2 class="news-title-infomoney">{{ post.title }}</h2>
-                <div class="news-meta-infomoney">
-                    <span class="news-time">{{ post.date | date: "%d/%m/%Y às %H:%M" }}</span>
-                </div>
-            </div>
-        </a>
-        {% endfor %}
-    </div>
+  <!-- Grid de Notícias -->
+  <div class="news-grid-infomoney">
+    {% assign energia_posts = site.posts | where: "categories", "Energia" %} {%
+    for post in energia_posts %}
+    <a href="{{ post.url | relative_url }}" class="news-card-infomoney">
+      <div class="news-image-container">
+        <img
+          src="{{ post.image | relative_url }}"
+          alt="{{ post.title }}"
+          class="news-image-infomoney"
+        />
+      </div>
+      <div class="news-content-infomoney">
+        <div class="news-categories">
+          {% for category in post.categories %}
+          <span class="news-category" data-category="{{ category | downcase }}"
+            >{{ category }}</span
+          >
+          {% endfor %}
+        </div>
+        <h2 class="news-title-infomoney">{{ post.title }}</h2>
+        <div class="news-meta-infomoney">
+          <span class="news-time"
+            >{{ post.date | date: "%d/%m/%Y às %H:%M" }}</span
+          >
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
 </div>
 
 <!-- Indicadores do Setor -->
 <section class="indicators-grid">
-    <div class="indicator-card">
-        <h3>Energia Solar</h3>
-        <div class="indicator-value">25 GW</div>
-        <div class="indicator-change positive">+15%</div>
-    </div>
-    <div class="indicator-card">
-        <h3>Energia Eólica</h3>
-        <div class="indicator-value">22 GW</div>
-        <div class="indicator-change positive">+12%</div>
-    </div>
-    <div class="indicator-card">
-        <h3>Investimentos</h3>
-        <div class="indicator-value">R$ 50 bi</div>
-        <div class="indicator-change positive">1º Trim/2024</div>
-    </div>
+  <div class="indicator-card">
+    <h3>Energia Solar</h3>
+    <div class="indicator-value">55 GW</div>
+    <div class="indicator-change positive">+22,2%</div>
+  </div>
+  <div class="indicator-card">
+    <h3>Energia Eólica</h3>
+    <div class="indicator-value">33,7 GW</div>
+    <div class="indicator-change positive">+21,6%</div>
+  </div>
+  <div class="indicator-card">
+    <h3>Investimentos</h3>
+    <div class="indicator-value">R$ 39,4 bi</div>
+    <div class="indicator-change positive">2025</div>
+  </div>
 </section>
 
 <!-- Conteúdo Principal -->
 <main class="news-grid">
-    {% for post in site.energia %}
-    <article class="news-card">
-        <img src="../assets/images/news/ibovespa-alta.jpg" alt="Notícia Principal" class="news-image">
-        <div class="news-content">
-            <span class="news-tag energia">Energia</span>
-            {% if post.categories %}
-                {% for category in post.categories %}
-                <span class="news-tag {{ category }}">{{ category | capitalize }}</span>
-                {% endfor %}
-            {% endif %}
-            <h2 class="news-title">{{ post.title }}</h2>
-            <p class="news-excerpt">{{ post.excerpt }}</p>
-            <div class="news-meta">
-                <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
-                <a href="{{ post.url | relative_url }}" class="news-link">Ler mais</a>
-            </div>
-        </div>
-    </article>
-    {% endfor %}
+  {% for post in site.energia %}
+  <article class="news-card">
+    <img
+      src="../assets/images/news/ibovespa-alta.jpg"
+      alt="Notícia Principal"
+      class="news-image"
+    />
+    <div class="news-content">
+      <span class="news-tag energia">Energia</span>
+      {% if post.categories %} {% for category in post.categories %}
+      <span class="news-tag {{ category }}">{{ category | capitalize }}</span>
+      {% endfor %} {% endif %}
+      <h2 class="news-title">{{ post.title }}</h2>
+      <p class="news-excerpt">{{ post.excerpt }}</p>
+      <div class="news-meta">
+        <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
+        <a href="{{ post.url | relative_url }}" class="news-link">Ler mais</a>
+      </div>
+    </div>
+  </article>
+  {% endfor %}
 </main>
-<img src="../assets/images/news/selic-mantida.jpg" alt="Notícia de Economia" class="news-image">
+<img
+  src="../assets/images/news/selic-mantida.jpg"
+  alt="Notícia de Economia"
+  class="news-image"
+/>
 <script src="../assets/js/markets.js"></script>
 <script src="../assets/js/news.js"></script>
 <script src="../assets/js/search.js"></script>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Inovações tecnológicas transformam o setor de energia no Brasil'
-date: 2025-05-19 13:00:00 -0300
+date: 2025-05-19 18:00:00 -0300
 categories: [Energia, Tecnologia]
 tags: [Tecnologia, Energia, Brasil, Inovação, Elétrica]
 author: Equipe InvestSavy

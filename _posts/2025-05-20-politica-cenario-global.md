@@ -1,11 +1,11 @@
 ---
 layout: post
 title: 'Cenário político global influencia mercados e investimentos'
-date: 2025-05-20 12:00:00 -0300
+date: 2025-05-20 18:15:00 -0300
 categories: Política
 tags: [Política, Geopolítica, Mercados]
 author: Equipe InvestSavy
-image: /assets/images/posts/politica-cenario-global.jpg
+image: assets/images/politica-global.png
 excerpt: 'Mudanças políticas e tensões internacionais impactam decisões de investimento e aumentam a volatilidade dos mercados.'
 ---
 
@@ -45,6 +45,7 @@ excerpt: 'Mudanças políticas e tensões internacionais impactam decisões de i
     <p>
       Especialistas sugerem atenção à diversificação de portfólio e ao monitoramento constante das notícias políticas, visando mitigar riscos e aproveitar oportunidades em meio à volatilidade global. Acompanhar as decisões de bancos centrais, eleições e negociações internacionais é fundamental para quem investe em mercados emergentes.
     </p>
+
   </div>
   <div class="news-source">
     Fonte: Valor Econômico, Reuters, Estadão
