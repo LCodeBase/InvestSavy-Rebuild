@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Cenário político global influencia mercados e investimentos'
-date: 2025-05-20 18:15:00 -0300
+date: 2025-05-19 18:15:00 -0300
 categories: Política
 tags: [Política, Geopolítica, Mercados]
 author: Equipe InvestSavy
