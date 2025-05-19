@@ -3,32 +3,31 @@ layout: default
 title: Mercados
 ---
 
-<!-- Hero Section -->
 <section class="hero">
     <h1 class="hero-title">Mercados</h1>
     <p class="hero-subtitle">Acompanhe as principais movimentações do mercado financeiro</p>
 </section>
-
-<!-- Conteúdo Principal -->
-<main class="news-grid">
-    {% assign mercado_posts = site.posts | where: "categories", "Mercados" %}
-    {% for post in mercado_posts %}
-    <article class="news-card">
-        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="news-image">
-        <div class="news-content">
-            <span class="news-tag mercados">Mercados</span>
-            {% if post.categories %}
-                {% for category in post.categories %}
-                <span class="news-tag {{ category | downcase }}">{{ category }}</span>
-                {% endfor %}
-            {% endif %}
-            <h2 class="news-title">{{ post.title }}</h2>
-            <p class="news-excerpt">{{ post.excerpt }}</p>
-            <div class="news-meta">
-                <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
-                <a href="{{ post.url | relative_url }}" class="news-link">Ler mais</a>
+<div class="category-container">
+    <!-- Grid de Notícias -->
+    <div class="news-grid-infomoney">
+        {% assign mercados_posts = site.posts | where: "categories", "Mercados" %}
+        {% for post in mercados_posts %}
+        <a href="{{ post.url | relative_url }}" class="news-card-infomoney">
+            <div class="news-image-container">
+                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="news-image-infomoney">
             </div>
-        </div>
-    </article>
-    {% endfor %}
-</main>
+            <div class="news-content-infomoney">
+                <div class="news-categories">
+                    {% for category in post.categories %}
+                    <span class="news-category" data-category="{{ category | downcase }}">{{ category }}</span>
+                    {% endfor %}
+                </div>
+                <h2 class="news-title-infomoney">{{ post.title }}</h2>
+                <div class="news-meta-infomoney">
+                    <span class="news-time">{{ post.date | date: "%d/%m/%Y às %H:%M" }}</span>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>

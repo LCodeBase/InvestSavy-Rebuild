@@ -3,12 +3,34 @@ layout: default
 title: Energia
 ---
 
-<!-- Hero Section -->
 <section class="hero">
     <h1 class="hero-title">Energia</h1>
-    <p class="hero-subtitle">Notícias e análises sobre o setor energético</p>
-
+    <p class="hero-subtitle">Notícias e análises sobre o setor de energia</p>
 </section>
+<div class="category-container">
+    <!-- Grid de Notícias -->
+    <div class="news-grid-infomoney">
+        {% assign energia_posts = site.posts | where: "categories", "Energia" %}
+        {% for post in energia_posts %}
+        <a href="{{ post.url | relative_url }}" class="news-card-infomoney">
+            <div class="news-image-container">
+                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="news-image-infomoney">
+            </div>
+            <div class="news-content-infomoney">
+                <div class="news-categories">
+                    {% for category in post.categories %}
+                    <span class="news-category" data-category="{{ category | downcase }}">{{ category }}</span>
+                    {% endfor %}
+                </div>
+                <h2 class="news-title-infomoney">{{ post.title }}</h2>
+                <div class="news-meta-infomoney">
+                    <span class="news-time">{{ post.date | date: "%d/%m/%Y às %H:%M" }}</span>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
 
 <!-- Indicadores do Setor -->
 <section class="indicators-grid">

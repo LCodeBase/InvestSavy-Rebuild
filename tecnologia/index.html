@@ -3,43 +3,31 @@ layout: default
 title: Tecnologia
 ---
 
-<!-- Hero Section -->
 <section class="hero">
     <h1 class="hero-title">Tecnologia</h1>
     <p class="hero-subtitle">Inovações e tendências do mundo da tecnologia</p>
-    <div class="hero-feature-card">
-        <div class="hero-feature-header">
-            <span class="badge-feature">TECNOLOGIA</span>
-            <span class="feature-time">Atualizado há 2 horas</span>
-        </div>
-        <h2 class="feature-title">Inteligência Artificial revoluciona mercado financeiro</h2>
-        <p class="feature-desc">Bancos e corretoras investem em IA para melhorar análise de dados e previsão de tendências de mercado.</p>
-        <div class="feature-actions">
-            <a href="{{ '/tecnologia/ia-mercado-financeiro' | relative_url }}" class="feature-link">Leia a matéria completa →</a>
-        </div>
-    </div>
 </section>
-
-<!-- Conteúdo Principal -->
-<main class="news-grid">
-    {% assign tecnologia_posts = site.posts | where: "categories", "Tecnologia" %}
-    {% for post in tecnologia_posts %}
-    <article class="news-card">
-        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="news-image">
-        <div class="news-content">
-            <span class="news-tag tecnologia">Tecnologia</span>
-            {% if post.categories %}
-                {% for category in post.categories %}
-                <span class="news-tag {{ category | downcase }}">{{ category }}</span>
-                {% endfor %}
-            {% endif %}
-            <h2 class="news-title">{{ post.title }}</h2>
-            <p class="news-excerpt">{{ post.excerpt }}</p>
-            <div class="news-meta">
-                <span class="news-date">{{ post.date | date: "%d de %B, %Y" }}</span>
-                <a href="{{ post.url | relative_url }}" class="news-link">Ler mais</a>
+<div class="category-container">
+    <!-- Grid de Notícias -->
+    <div class="news-grid-infomoney">
+        {% assign tecnologia_posts = site.posts | where: "categories", "Tecnologia" %}
+        {% for post in tecnologia_posts %}
+        <a href="{{ post.url | relative_url }}" class="news-card-infomoney">
+            <div class="news-image-container">
+                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="news-image-infomoney">
             </div>
-        </div>
-    </article>
-    {% endfor %}
-</main>
+            <div class="news-content-infomoney">
+                <div class="news-categories">
+                    {% for category in post.categories %}
+                    <span class="news-category" data-category="{{ category | downcase }}">{{ category }}</span>
+                    {% endfor %}
+                </div>
+                <h2 class="news-title-infomoney">{{ post.title }}</h2>
+                <div class="news-meta-infomoney">
+                    <span class="news-time">{{ post.date | date: "%d/%m/%Y às %H:%M" }}</span>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
