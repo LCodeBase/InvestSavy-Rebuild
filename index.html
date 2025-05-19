@@ -71,8 +71,8 @@ title: InvestSavy - Portal de Notícias Financeiras
 
     <!-- Conteúdo Principal -->
     <main class="news-grid">
-      {%- assign principais = site.posts | sort: 'date' | reverse | limit: 3 -%}
-      {%- for post in principais -%}
+      {%- assign posts_ordenados = site.posts | sort: 'date' | reverse -%} {%-
+      for post in posts_ordenados limit:3 -%}
       <article class="news-card">
         <img
           src="{{ post.image | relative_url }}"
