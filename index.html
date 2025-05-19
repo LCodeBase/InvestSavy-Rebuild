@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InvestSavy - Notícias Financeiras</title>
+    <title>InvestSavy - Portal de Notícias Financeiras</title>
     <link rel="icon" type="image/x-icon" href="assets/images/Logo1.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -11,23 +11,23 @@
 <body>
     <!-- Header Principal -->
     <header class="header">
-        <a href="index.html" class="logo">InvestSavy</a>
+        <a href="" class="logo">InvestSavy</a>
         <div class="header-actions">
-            <a href="login.html" class="header-action">Login</a>
-            <a href="assine.html" class="header-action">Assine</a>
-            <a href="contato.html" class="header-action">Contato</a>
+            <a href="login" class="header-action">Login</a>
+            <a href="assine" class="header-action">Assine</a>
+            <a href="contato" class="header-action">Contato</a>
         </div>
     </header>
 
     <!-- Barra de Navegação Secundária -->
     <nav class="nav-bar">
         <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link">Destaques</a></li>
-            <li><a href="mercados.html" class="nav-link">Mercados</a></li>
-            <li><a href="economia.html" class="nav-link">Economia</a></li>
-            <li><a href="politica.html" class="nav-link">Política</a></li>
-            <li><a href="tecnologia.html" class="nav-link">Tecnologia</a></li>
-            <li><a href="energia.html" class="nav-link">Energia</a></li>
+            <li><a href="destaques" class="nav-link">Destaques</a></li>
+            <li><a href="mercados" class="nav-link">Mercados</a></li>
+            <li><a href="economia" class="nav-link">Economia</a></li>
+            <li><a href="politica" class="nav-link">Política</a></li>
+            <li><a href="tecnologia" class="nav-link">Tecnologia</a></li>
+            <li><a href="energia" class="nav-link">Energia</a></li>
         </ul>
         <div class="search-bar">
             <form class="search-form" id="searchForm">
@@ -68,15 +68,53 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Notícias Financeiras em Tempo Real</h1>
-            <p>Fique por dentro das principais notícias do mercado financeiro</p>
+        <h1 class="hero-title">Investimentos com Inteligência</h1>
+        <p class="hero-subtitle">Notícias, análises e ferramentas gratuitas para decisões financeiras inteligentes</p>
+        <div class="hero-feature-card">
+            <div class="hero-feature-header">
+                <span class="badge-feature">DESTAQUE</span>
+                <span class="feature-time">Atualizado há 35 minutos</span>
+            </div>
+            <h2 class="feature-title">Banco Central mantém taxa Selic em 10,5% apesar da pressão inflacionária</h2>
+            <p class="feature-desc">O Copom decide manter a taxa de juros, surpreendendo analistas que esperavam alta. Entenda os impactos no mercado e suas finanças pessoais.</p>
+            <div class="feature-actions">
+                <a href="#" class="feature-link">Leia a análise completa →</a>
+                <a href="#" class="feature-btn">Acessar Ferramentas</a>
+            </div>
         </div>
     </section>
 
-    <!-- Grid de Notícias -->
-    <main class="news-grid" id="newsGrid">
-        <!-- As notícias serão carregadas aqui via JavaScript -->
+    <!-- Conteúdo Principal -->
+    <main class="news-grid">
+        <!-- Exemplo de Notícia com Tag -->
+        <article class="news-card">
+            <img src="assets/images/news1.jpg" alt="Notícia Principal" class="news-image">
+            <div class="news-content">
+                <span class="news-tag destaque">Destaques</span>
+                <span class="news-tag mercados">Mercados</span>
+                <h2 class="news-title">Ibovespa fecha em alta com dados econômicos positivos</h2>
+                <p class="news-excerpt">O principal índice da B3 subiu 2,5% nesta quarta-feira, impulsionado por dados econômicos melhores que o esperado...</p>
+                <div class="news-meta">
+                    <span class="news-date">15 de Março, 2024</span>
+                    <a href="noticia/ibovespa-alta" class="news-link">Ler mais</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Exemplo de Notícia com Múltiplas Tags -->
+        <article class="news-card">
+            <img src="assets/images/news2.jpg" alt="Notícia de Economia" class="news-image">
+            <div class="news-content">
+                <span class="news-tag economia">Economia</span>
+                <span class="news-tag politica">Política</span>
+                <h2 class="news-title">BC mantém Selic em 11,75% ao ano</h2>
+                <p class="news-excerpt">O Comitê de Política Monetária (Copom) decidiu manter a taxa básica de juros em 11,75% ao ano...</p>
+                <div class="news-meta">
+                    <span class="news-date">14 de Março, 2024</span>
+                    <a href="noticia/selic-mantida" class="news-link">Ler mais</a>
+                </div>
+            </div>
+        </article>
     </main>
 
     <!-- Newsletter -->
@@ -86,6 +124,81 @@
             <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
             <button type="submit" class="newsletter-button">Inscrever-se</button>
         </form>
+    </section>
+
+    <!-- Ações em Destaque -->
+    <section class="stocks-highlight">
+        <h2 class="stocks-title">Ações em Destaque</h2>
+        <div class="container">
+            <div class="market-status"></div>
+            <div class="stocks-table-container">
+                <table class="stocks-table">
+                    <thead>
+                        <tr>
+                            <th>TICKER</th>
+                            <th>EMPRESA</th>
+                            <th>PREÇO</th>
+                            <th>VARIAÇÃO</th>
+                            <th>VOLUME</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>PETR4</strong></td>
+                            <td>Petrobras</td>
+                            <td>R$ 38.75</td>
+                            <td class="positive">+1.25%</td>
+                            <td>2.3M</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VALE3</strong></td>
+                            <td>Vale</td>
+                            <td>R$ 68.43</td>
+                            <td class="negative">-0.75%</td>
+                            <td>3.1M</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ITUB4</strong></td>
+                            <td>Itaú Unibanco</td>
+                            <td>R$ 34.52</td>
+                            <td class="positive">+0.62%</td>
+                            <td>1.8M</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BBDC4</strong></td>
+                            <td>Bradesco</td>
+                            <td>R$ 19.87</td>
+                            <td class="negative">-0.23%</td>
+                            <td>2.5M</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ABEV3</strong></td>
+                            <td>Ambev</td>
+                            <td>R$ 14.93</td>
+                            <td class="positive">+0.31%</td>
+                            <td>1.2M</td>
+                        </tr>
+                        <tr>
+                            <td><strong>WEGE3</strong></td>
+                            <td>WEG</td>
+                            <td>R$ 42.65</td>
+                            <td class="positive">+2.18%</td>
+                            <td>980K</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RENT3</strong></td>
+                            <td>Localiza</td>
+                            <td>R$ 58.72</td>
+                            <td class="negative">-1.42%</td>
+                            <td>865K</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="stocks-btn-wrapper">
+                <a href="#" class="stocks-btn">Ver Todos os Dados</a>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -98,9 +211,9 @@
             <div class="footer-section">
                 <h3>Links Rápidos</h3>
                 <ul class="footer-links">
-                    <li><a href="termos.html">Termos de Uso</a></li>
-                    <li><a href="privacidade.html">Política de Privacidade</a></li>
-                    <li><a href="contato.html">Fale Conosco</a></li>
+                    <li><a href="termos">Termos de Uso</a></li>
+                    <li><a href="privacidade">Política de Privacidade</a></li>
+                    <li><a href="contato">Fale Conosco</a></li>
                 </ul>
             </div>
             <div class="footer-section">

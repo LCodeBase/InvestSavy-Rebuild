@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecionando - InvestSavy</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <script>
         // Redireciona para a página correta baseado na URL
         const path = window.location.pathname;
         if (path.startsWith('/noticia/')) {
-            window.location.href = 'noticia.html?slug=' + path.split('/').pop();
+            window.location.href = '/noticia.html?slug=' + path.split('/').pop();
         } else if (path.startsWith('/destaques')) {
-            window.location.href = 'index.html?category=destaques';
+            window.location.href = '/index.html?category=destaques';
         } else if (path.startsWith('/mercados')) {
-            window.location.href = 'index.html?category=mercados';
+            window.location.href = '/index.html?category=mercados';
         } else if (path.startsWith('/economia')) {
-            window.location.href = 'index.html?category=economia';
+            window.location.href = '/index.html?category=economia';
         } else if (path.startsWith('/politica')) {
-            window.location.href = 'index.html?category=politica';
+            window.location.href = '/index.html?category=politica';
         } else if (path.startsWith('/tecnologia')) {
-            window.location.href = 'index.html?category=tecnologia';
+            window.location.href = '/index.html?category=tecnologia';
         } else if (path.startsWith('/energia')) {
-            window.location.href = 'index.html?category=energia';
+            window.location.href = '/index.html?category=energia';
         } else {
-            window.location.href = 'index.html';
+            window.location.href = '/';
         }
     </script>
 </head>
