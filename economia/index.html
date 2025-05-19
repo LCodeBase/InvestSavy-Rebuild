@@ -29,9 +29,16 @@
             <li><a href="/tecnologia" class="nav-link">Tecnologia</a></li>
             <li><a href="/energia" class="nav-link">Energia</a></li>
         </ul>
-        <div class="nav-search">
-            <input type="search" placeholder="Buscar...">
-            <button type="button">🔍</button>
+        <div class="search-bar">
+            <form class="search-form" id="searchForm">
+                <input type="text" class="search-input" placeholder="Buscar notícias..." id="searchInput">
+                <button type="submit" class="search-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+            </form>
+            <div class="search-results" id="searchResults"></div>
         </div>
     </nav>
 
@@ -59,58 +66,15 @@
         </div>
     </div>
 
-    <!-- Hero Section da Categoria -->
+    <!-- Hero da Categoria -->
     <section class="category-hero">
-        <div class="container">
-            <h1 class="category-title">Economia</h1>
-            <p class="category-description">Análises e notícias sobre indicadores econômicos, políticas monetárias, inflação e tendências macroeconômicas.</p>
-        </div>
+        <h1 class="category-title">Economia</h1>
+        <p class="category-description">Notícias e análises sobre economia brasileira e mundial</p>
     </section>
 
-    <!-- Conteúdo Principal -->
-    <main class="news-grid">
-        <!-- Notícia 1 -->
-        <article class="news-card">
-            <img src="/assets/images/news1.jpg" alt="Notícia de Economia" class="news-image">
-            <div class="news-content">
-                <span class="news-tag economia">Economia</span>
-                <span class="news-tag destaque">Destaques</span>
-                <h2 class="news-title">IPCA registra queda de 0,15% em fevereiro</h2>
-                <p class="news-excerpt">Inflação oficial do Brasil recua pelo segundo mês consecutivo, abaixo das expectativas do mercado...</p>
-                <div class="news-meta">
-                    <span class="news-date">15 de Março, 2024</span>
-                    <a href="/noticia/ipca-fevereiro" class="news-link">Ler mais</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Notícia 2 -->
-        <article class="news-card">
-            <img src="/assets/images/news2.jpg" alt="Notícia de Economia" class="news-image">
-            <div class="news-content">
-                <span class="news-tag economia">Economia</span>
-                <h2 class="news-title">PIB brasileiro cresce 2,3% em 2023</h2>
-                <p class="news-excerpt">Economia brasileira mostra recuperação acima das expectativas, impulsionada pelo setor de serviços...</p>
-                <div class="news-meta">
-                    <span class="news-date">14 de Março, 2024</span>
-                    <a href="/noticia/pib-2023" class="news-link">Ler mais</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Notícia 3 -->
-        <article class="news-card">
-            <img src="/assets/images/news3.jpg" alt="Notícia de Economia" class="news-image">
-            <div class="news-content">
-                <span class="news-tag economia">Economia</span>
-                <h2 class="news-title">Taxa de desemprego cai para 7,8%</h2>
-                <p class="news-excerpt">Mercado de trabalho mostra sinais de recuperação com criação de 150 mil vagas formais...</p>
-                <div class="news-meta">
-                    <span class="news-date">13 de Março, 2024</span>
-                    <a href="/noticia/desemprego" class="news-link">Ler mais</a>
-                </div>
-            </div>
-        </article>
+    <!-- Grid de Notícias -->
+    <main class="news-grid" id="newsGrid">
+        <!-- As notícias serão carregadas aqui via JavaScript -->
     </main>
 
     <!-- Newsletter -->
@@ -150,5 +114,6 @@
 
     <script src="/assets/js/markets.js"></script>
     <script src="/assets/js/news.js"></script>
+    <script src="/assets/js/search.js"></script>
 </body>
 </html>
