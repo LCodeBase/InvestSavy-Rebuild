@@ -2,8 +2,8 @@
 layout: post
 title: 'Inovações tecnológicas transformam o setor de energia no Brasil'
 date: 2025-05-19 13:00:00 -0300
-categories: Tecnologia, Energia
-tags: [Tecnologia, Energia]
+categories: [Energia, Tecnlogia]
+tags: [Tecnologia, Energia, Brasil, Inovação, Elétrica]
 author: Equipe InvestSavy
 image: assets/images/posts/inovacao-brasil.png
 excerpt: 'O setor elétrico brasileiro adota inteligência artificial, chatbots e novas ferramentas digitais para aumentar eficiência e segurança.'
