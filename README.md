@@ -1,4 +1,4 @@
-<h1 align="center"> <img src="https://github.com/LCodeBase/InvestSavy/blob/main/assets/images/Logo1.png" alt="InvestSavy Banner" width="10%" /> InvestSavy</h1>
+<h1 align="center"> <img src="https://github.com/LCodeBase/InvestSavy/blob/main/assets/images/Logo1.png" alt="InvestSavy Banner" width="3%" /> InvestSavy</h1>
 
 <p align="center">
   <strong>Seu portal moderno de notícias e análises financeiras</strong><br>
