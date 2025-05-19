@@ -1,107 +1,104 @@
-# InvestSavy - Portal de Notícias Financeiras
+# 📈 InvestSavy
 
-Portal moderno de notícias financeiras e análises de mercado, desenvolvido com HTML, CSS e JavaScript puro, utilizando Jekyll para gerenciamento de conteúdo.
+**InvestSavy** é um portal moderno de notícias financeiras e análises de mercado, desenvolvido com HTML, CSS e JavaScript puro, utilizando Jekyll para gerenciamento de conteúdo.:contentReference[oaicite:2]{index=2}
 
-## Características
+![InvestSavy Banner](https://github.com/LCodeBase/InvestSavy/assets/banner.png)
 
-- Design moderno e responsivo
-- Atualizações em tempo real de cotações do mercado
-- Sistema de notícias baseado em Markdown
-- Layout limpo e profissional
-- Integração com API de dados financeiros
-- Newsletter para conteúdo exclusivo
+---
 
-## Tecnologias Utilizadas
+## 🚀 Visão Geral
 
-- HTML5
-- CSS3 (com variáveis CSS)
-- JavaScript (ES6+)
-- Jekyll (para gerenciamento de conteúdo)
-- Markdown (para conteúdo das notícias)
-- Alpha Vantage API (para dados do mercado)
+:contentReference[oaicite:4]{index=4}:contentReference[oaicite:6]{index=6}
 
-## Estrutura do Projeto
+---
 
-```
-investsavy/
-├── _config.yml          # Configurações do Jekyll
-├── _posts/             # Posts em Markdown
-├── _layouts/           # Templates de layout
-├── assets/
-│   ├── css/           # Estilos CSS
-│   ├── js/            # Scripts JavaScript
-│   └── images/        # Imagens do site
-├── index.html         # Página inicial
-└── README.md          # Documentação
-```
+## 🧰 Tecnologias Utilizadas
 
-## Configuração do Ambiente
+- :contentReference[oaicite:8]{index=8}
+- :contentReference[oaicite:11]{index=11}
+- :contentReference[oaicite:14]{index=14}
+- :contentReference[oaicite:17]{index=17}
+- :contentReference[oaicite:20]{index=20}:contentReference[oaicite:22]{index=22}
 
-1. Clone o repositório:
+---
+
+## 📂 Estrutura do Projeto
+
 
 ```bash
-git clone https://github.com/seu-usuario/investsavy.git
-cd investsavy
-```
+InvestSavy/
+├── _layouts/           # Layouts do Jekyll
+├── _posts/             # Posts de notícias
+├── assets/             # Imagens, scripts e estilos
+├── destaques/          # Notícias em destaque
+├── economia/           # Notícias de economia
+├── energia/            # Notícias do setor de energia
+├── mercados/           # Notícias de mercados financeiros
+├── politica/           # Notícias políticas
+├── tecnologia/         # Notícias de tecnologia
+├── assine.html         # Página de assinatura
+├── contato.html        # Página de contato
+├── index.html          # Página inicial
+├── noticia.html        # Template de notícia
+├── noticia.php         # Versão PHP do template de notícia
+├── .gitignore          # Arquivos e pastas ignorados pelo Git
+├── .htaccess           # Configurações do servidor
+├── Gemfile             # Dependências do Jekyll
+├── Gemfile.lock        # Versões travadas das dependências
+├── LICENSE             # Licença do projeto
+├── README.md           # Este arquivo
+└── _config.yml         # Configurações do Jekyll
+🌟 Funcionalidades
+Design moderno e responsivo para todos os dispositivos.
 
-2. Instale as dependências do Jekyll:
+Atualizações em tempo real de cotações do mercado.
 
-```bash
+Sistema de notícias baseado em Markdown para fácil gerenciamento de conteúdo.
+
+Categorias organizadas para facilitar a navegação: Economia, Energia, Mercados, Política e Tecnologia.
+
+Páginas dedicadas para assinatura de newsletter e contato.
+
+📦 Instalação e Uso
+Clone o repositório:
+
+bash
+Copiar
+Editar
+git clone https://github.com/LCodeBase/InvestSavy.git
+Instale as dependências do Jekyll:
+
+bash
+Copiar
+Editar
 bundle install
-```
+Inicie o servidor local:
 
-3. Configure sua chave API do Alpha Vantage:
-
-   - Obtenha uma chave em https://www.alphavantage.co/
-   - Substitua `YOUR_API_KEY` em `assets/js/markets.js`
-
-4. Inicie o servidor local:
-
-```bash
+bash
+Copiar
+Editar
 bundle exec jekyll serve
-```
+Acesse o site:
 
-## Desenvolvimento
+Abra o navegador e vá para http://localhost:4000 para visualizar o site localmente.
 
-### Adicionando Novas Notícias
+📄 Licença
+Este projeto está licenciado sob a Licença MIT. Sinta-se à vontade para usá-lo, modificá-lo e distribuí-lo conforme necessário.
 
-1. Crie um novo arquivo `.md` em `_posts/`
-2. Use o seguinte formato para o nome do arquivo: `YYYY-MM-DD-titulo-da-noticia.md`
-3. Adicione o front matter necessário:
+🤝 Contribuindo
+Contribuições são bem-vindas! Se você deseja melhorar o projeto, por favor, siga os passos abaixo:
 
-```yaml
----
-layout: post
-title: 'Título da Notícia'
-date: YYYY-MM-DD HH:MM:SS -0300
-categories: [categoria]
-tags: [tag1, tag2]
-author: 'Nome do Autor'
-image: /assets/images/posts/imagem.jpg
-excerpt: 'Resumo da notícia'
----
-```
+Fork este repositório.
 
-### Personalizando o Layout
+Crie uma nova branch: git checkout -b minha-nova-funcionalidade.
 
-- Modifique os estilos em `assets/css/style.css`
-- Ajuste os templates em `_layouts/`
-- Atualize as configurações em `_config.yml`
+Faça suas alterações e commit: git commit -m 'Adiciona nova funcionalidade'.
 
-## Contribuição
+Envie para a branch: git push origin minha-nova-funcionalidade.
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
+Abra um Pull Request.
 
-## Licença
+📬 Contato
+Para sugestões, dúvidas ou feedback, por favor, entre em contato através da página de contato ou envie um e-mail para seu-email@example.com.
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-## Contato
-
-- Website: [investsavy.com.br](https://investsavy.com.br)
-- Email: contato@investsavy.com.br
-- Twitter: [@investsavy](https://twitter.com/investsavy)
+Desenvolvido por LCodeBase
