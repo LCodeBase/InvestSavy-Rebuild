@@ -47,7 +47,7 @@
       <div class="hero-feature-card">
         <div class="hero-feature-header">
           <span class="badge-feature">DESTAQUE</span>
-          <span class="feature-time">15 de Março, 2024</span>
+          <span class="feature-time">19 de Maio, 2025</span>
         </div>
         <h2 class="feature-title">
           Mercado de ações brasileiro atinge nova máxima histórica
@@ -57,15 +57,17 @@
           positivos das empresas e melhora no cenário macroeconômico.
         </p>
         <div class="feature-actions">
-          <a href="#" class="feature-link">Leia a notícia completa →</a>
+          <a href="destaques/index.html" class="feature-link"
+            >Leia a notícia completa →</a
+          >
         </div>
       </div>
     </section>
 
     <!-- Conteúdo Principal -->
     <main class="news-grid">
-      {% assign principais = site.posts | sort: 'date' | reverse | limit: 6 %}
-      {% for post in principais %}
+      {%- assign principais = site.posts | sort: 'date' | reverse | limit: 6 -%}
+      {%- for post in principais -%}
       <article class="news-card">
         <img
           src="{{ post.image | relative_url }}"
@@ -73,11 +75,11 @@
           class="news-image"
         />
         <div class="news-content">
-          {% for categoria in post.categories %}
+          {%- for categoria in post.categories -%}
           <span class="news-tag {{ categoria | downcase }}"
             >{{ categoria }}</span
           >
-          {% endfor %}
+          {%- endfor -%}
           <h2 class="news-title">{{ post.title }}</h2>
           <p class="news-excerpt">{{ post.excerpt }}</p>
           <div class="news-meta">
@@ -90,7 +92,7 @@
           </div>
         </div>
       </article>
-      {% endfor %}
+      {%- endfor -%}
     </main>
 
     <!-- Newsletter -->
