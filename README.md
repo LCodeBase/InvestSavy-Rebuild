@@ -1,72 +1,62 @@
-# 📈 InvestSavy
+##📈 InvestSavy
+InvestSavy é um portal moderno de notícias financeiras e análises de mercado, desenvolvido com HTML, CSS e JavaScript puro, utilizando o Jekyll para gerenciamento de conteúdo.
 
-**InvestSavy** é um portal moderno de notícias financeiras e análises de mercado, desenvolvido com HTML, CSS e JavaScript puro, utilizando Jekyll para gerenciamento de conteúdo.:contentReference[oaicite:2]{index=2}
+<!-- Substitua pelo caminho correto da imagem -->
 
-![InvestSavy Banner](https://github.com/LCodeBase/InvestSavy/assets/banner.png)
+🚀 Funcionalidades
+✅ Design Responsivo: Compatível com dispositivos móveis, tablets e desktops.
 
----
+📊 Cotações em Tempo Real: Atualizações automáticas de índices e ativos financeiros.
 
-## 🚀 Visão Geral
+📰 Sistema de Publicação de Notícias: Organização por categorias como economia, política, tecnologia, energia e mercados.
 
-:contentReference[oaicite:4]{index=4}:contentReference[oaicite:6]{index=6}
+🔍 Busca Integrada: Encontre rapidamente notícias e análises específicas.
 
----
+📬 Página de Assinatura: Captura de e-mails para newsletters e atualizações.
 
-## 🧰 Tecnologias Utilizadas
+📄 404 Personalizada: Página de erro personalizada para melhorar a experiência do usuário.
 
-- :contentReference[oaicite:8]{index=8}
-- :contentReference[oaicite:11]{index=11}
-- :contentReference[oaicite:14]{index=14}
-- :contentReference[oaicite:17]{index=17}
-- :contentReference[oaicite:20]{index=20}:contentReference[oaicite:22]{index=22}
-
----
-
-## 📂 Estrutura do Projeto
-
-
-```bash
+🧱 Estrutura do Projeto
+bash
+Copiar
+Editar
 InvestSavy/
-├── _layouts/           # Layouts do Jekyll
-├── _posts/             # Posts de notícias
-├── assets/             # Imagens, scripts e estilos
+├── _layouts/           # Layouts base do Jekyll
+├── _posts/             # Publicações de notícias
+├── assets/             # Imagens, estilos e scripts
 ├── destaques/          # Notícias em destaque
-├── economia/           # Notícias de economia
-├── energia/            # Notícias do setor de energia
-├── mercados/           # Notícias de mercados financeiros
-├── politica/           # Notícias políticas
-├── tecnologia/         # Notícias de tecnologia
+├── economia/           # Categoria: Economia
+├── energia/            # Categoria: Energia
+├── mercados/           # Categoria: Mercados
+├── politica/           # Categoria: Política
+├── tecnologia/         # Categoria: Tecnologia
 ├── assine.html         # Página de assinatura
 ├── contato.html        # Página de contato
-├── index.html          # Página inicial
 ├── noticia.html        # Template de notícia
-├── noticia.php         # Versão PHP do template de notícia
-├── .gitignore          # Arquivos e pastas ignorados pelo Git
-├── .htaccess           # Configurações do servidor
-├── Gemfile             # Dependências do Jekyll
-├── Gemfile.lock        # Versões travadas das dependências
-├── LICENSE             # Licença do projeto
-├── README.md           # Este arquivo
-└── _config.yml         # Configurações do Jekyll
-🌟 Funcionalidades
-Design moderno e responsivo para todos os dispositivos.
+├── index.html          # Página inicial
+├── 404.html            # Página de erro personalizada
+├── _config.yml         # Configurações do Jekyll
+├── Gemfile             # Dependências do Ruby
+├── package.json        # Dependências do Node.js
+└── README.md           # Documentação do projeto
+⚙️ Tecnologias Utilizadas
+Frontend: HTML5, CSS3, JavaScript Vanilla
 
-Atualizações em tempo real de cotações do mercado.
+Gerenciador de Conteúdo: Jekyll
 
-Sistema de notícias baseado em Markdown para fácil gerenciamento de conteúdo.
+Estilização: CSS puro (sem frameworks)
 
-Categorias organizadas para facilitar a navegação: Economia, Energia, Mercados, Política e Tecnologia.
-
-Páginas dedicadas para assinatura de newsletter e contato.
-
-📦 Instalação e Uso
+📦 Instalação e Execução Local
 Clone o repositório:
 
 bash
 Copiar
 Editar
 git clone https://github.com/LCodeBase/InvestSavy.git
+cd InvestSavy
 Instale as dependências do Jekyll:
+
+Certifique-se de ter o Ruby e o Bundler instalados.
 
 bash
 Copiar
@@ -80,25 +70,20 @@ Editar
 bundle exec jekyll serve
 Acesse o site:
 
-Abra o navegador e vá para http://localhost:4000 para visualizar o site localmente.
+Abra o navegador e vá para http://localhost:4000.
 
-📄 Licença
-Este projeto está licenciado sob a Licença MIT. Sinta-se à vontade para usá-lo, modificá-lo e distribuí-lo conforme necessário.
+📁 Licença
+Este projeto está licenciado sob a MIT License.
 
 🤝 Contribuindo
-Contribuições são bem-vindas! Se você deseja melhorar o projeto, por favor, siga os passos abaixo:
+Contribuições são bem-vindas! Se você deseja sugerir melhorias, corrigir bugs ou adicionar novas funcionalidades:
 
 Fork este repositório.
 
-Crie uma nova branch: git checkout -b minha-nova-funcionalidade.
+Crie uma nova branch: git checkout -b feature/nova-funcionalidade.
 
 Faça suas alterações e commit: git commit -m 'Adiciona nova funcionalidade'.
 
-Envie para a branch: git push origin minha-nova-funcionalidade.
+Envie para o seu fork: git push origin feature/nova-funcionalidade.
 
 Abra um Pull Request.
-
-📬 Contato
-Para sugestões, dúvidas ou feedback, por favor, entre em contato através da página de contato ou envie um e-mail para seu-email@example.com.
-
-Desenvolvido por LCodeBase
