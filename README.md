@@ -100,14 +100,14 @@ Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes
 
 <p align="center">
   <a href="mailto:leonardo.developer.figueiredo@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/✉️%20Email-leonardo.developer.figueiredo@gmail.com-blue?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    &nbsp;&nbsp;&nbsp; <img src="https://img.shields.io/badge/✉️%20Email-leonardo.developer.figueiredo@gmail.com-blue?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   
 </p>
-<br><br>
+<br>
 <p align="center">
  <a href="https://www.linkedin.com/in/leonardo-fe-figueiredo/" target="_blank">
-    <img src="https://img.shields.io/badge/💼%20LinkedIn-Acessar%20Perfil-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  &nbsp;&nbsp;&nbsp; <img src="https://img.shields.io/badge/💼%20LinkedIn-Acessar%20Perfil-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
 </p>
   
