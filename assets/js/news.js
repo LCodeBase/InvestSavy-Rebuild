@@ -1,7 +1,7 @@
 // Função para carregar as notícias
 async function loadNews() {
   try {
-    const response = await fetch('/_posts/index.php')
+    const response = await fetch('_posts/index.php')
     const posts = await response.json()
     return posts
   } catch (error) {
@@ -33,7 +33,7 @@ function createNewsCard(post, isFeatured = false) {
                 <p class="news-excerpt">${post.excerpt}</p>
                 <div class="news-meta">
                     <span class="news-date">${formatDate(post.date)}</span>
-                    <a href="/noticia/${
+                    <a href="noticia.html?slug=${
                       post.slug
                     }" class="news-link">Ler mais</a>
                 </div>
