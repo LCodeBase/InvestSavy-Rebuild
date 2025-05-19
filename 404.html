@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página não encontrada - InvestSavy</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script>
+        // Verifica se a URL é uma notícia
+        const path = window.location.pathname;
+        if (path.startsWith('/noticia/')) {
+            // Redireciona para a página de notícia
+            window.location.href = '/noticia.html' + path;
+        } else {
+            // Redireciona para a página inicial
+            window.location.href = '/';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Página não encontrada</h1>
+        <p>Redirecionando...</p>
+    </div>
+</body>
+</html>

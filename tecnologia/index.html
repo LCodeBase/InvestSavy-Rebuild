@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - InvestSavy</title>
+    <title>Tecnologia - InvestSavy</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    {% seo %}
 </head>
 <body>
     <!-- Header Principal -->
@@ -22,14 +22,12 @@
     <!-- Barra de Navegação Secundária -->
     <nav class="nav-bar">
         <ul class="nav-menu">
+            <li><a href="/destaques" class="nav-link">Destaques</a></li>
             <li><a href="/mercados" class="nav-link">Mercados</a></li>
             <li><a href="/economia" class="nav-link">Economia</a></li>
             <li><a href="/politica" class="nav-link">Política</a></li>
             <li><a href="/tecnologia" class="nav-link">Tecnologia</a></li>
             <li><a href="/energia" class="nav-link">Energia</a></li>
-            <li><a href="/commodities" class="nav-link">Commodities</a></li>
-            <li><a href="/currencies" class="nav-link">Moedas</a></li>
-            <li><a href="/bonds" class="nav-link">Títulos</a></li>
         </ul>
         <div class="nav-search">
             <input type="search" placeholder="Buscar...">
@@ -61,33 +59,57 @@
         </div>
     </div>
 
-    <!-- Conteúdo do Post -->
-    <main class="post-content">
-        <article class="post">
-            <header class="post-header">
-                <h1 class="post-title">{{ page.title }}</h1>
-                <div class="post-meta">
-                    <span class="post-date">{{ page.date | date: "%d/%m/%Y" }}</span>
-                    <span class="post-author">Por {{ page.author }}</span>
-                    <span class="post-category">{{ page.categories | first | capitalize }}</span>
+    <!-- Hero Section da Categoria -->
+    <section class="category-hero">
+        <div class="container">
+            <h1 class="category-title">Tecnologia</h1>
+            <p class="category-description">As últimas novidades e tendências do mundo da tecnologia que impactam os mercados e investimentos.</p>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main class="news-grid">
+        <!-- Notícia 1 -->
+        <article class="news-card">
+            <img src="/assets/images/news1.jpg" alt="Notícia de Tecnologia" class="news-image">
+            <div class="news-content">
+                <span class="news-tag tecnologia">Tecnologia</span>
+                <span class="news-tag destaque">Destaques</span>
+                <h2 class="news-title">Nova geração de chips revoluciona mercado</h2>
+                <p class="news-excerpt">Fabricantes anunciam avanços significativos em processadores com tecnologia de 2nm...</p>
+                <div class="news-meta">
+                    <span class="news-date">15 de Março, 2024</span>
+                    <a href="/noticia/chips-2nm" class="news-link">Ler mais</a>
                 </div>
-            </header>
-
-            {% if page.image %}
-            <img src="{{ page.image }}" alt="{{ page.title }}" class="post-image">
-            {% endif %}
-
-            <div class="post-body">
-                {{ content }}
             </div>
+        </article>
 
-            <footer class="post-footer">
-                <div class="post-tags">
-                    {% for tag in page.tags %}
-                    <span class="post-tag">{{ tag }}</span>
-                    {% endfor %}
+        <!-- Notícia 2 -->
+        <article class="news-card">
+            <img src="/assets/images/news2.jpg" alt="Notícia de Tecnologia" class="news-image">
+            <div class="news-content">
+                <span class="news-tag tecnologia">Tecnologia</span>
+                <h2 class="news-title">Startup brasileira recebe investimento recorde</h2>
+                <p class="news-excerpt">Empresa de IA recebe aporte de R$ 500 milhões em rodada de investimento...</p>
+                <div class="news-meta">
+                    <span class="news-date">14 de Março, 2024</span>
+                    <a href="/noticia/startup-ia" class="news-link">Ler mais</a>
                 </div>
-            </footer>
+            </div>
+        </article>
+
+        <!-- Notícia 3 -->
+        <article class="news-card">
+            <img src="/assets/images/news3.jpg" alt="Notícia de Tecnologia" class="news-image">
+            <div class="news-content">
+                <span class="news-tag tecnologia">Tecnologia</span>
+                <h2 class="news-title">Blockchain transforma mercado financeiro</h2>
+                <p class="news-excerpt">Novas aplicações de blockchain revolucionam processos financeiros tradicionais...</p>
+                <div class="news-meta">
+                    <span class="news-date">13 de Março, 2024</span>
+                    <a href="/noticia/blockchain-financeiro" class="news-link">Ler mais</a>
+                </div>
+            </div>
         </article>
     </main>
 
@@ -127,5 +149,6 @@
     </footer>
 
     <script src="/assets/js/markets.js"></script>
+    <script src="/assets/js/news.js"></script>
 </body>
 </html>

@@ -1,12 +1,34 @@
+<?php
+$slug = $_GET['slug'] ?? '';
+$posts = json_decode(file_get_contents('_posts/index.php'), true);
+$post = null;
+
+foreach ($posts as $p) {
+    if ($p['slug'] === $slug) {
+        $post = $p;
+        break;
+    }
+}
+
+if (!$post) {
+    header('Location: /');
+    exit;
+}
+
+// Converte o conteúdo Markdown para HTML
+require_once 'vendor/parsedown/Parsedown.php';
+$parsedown = new Parsedown();
+$content = $parsedown->text($post['content']);
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - InvestSavy</title>
+    <title><?php echo htmlspecialchars($post['title']); ?> - InvestSavy</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    {% seo %}
 </head>
 <body>
     <!-- Header Principal -->
@@ -22,14 +44,12 @@
     <!-- Barra de Navegação Secundária -->
     <nav class="nav-bar">
         <ul class="nav-menu">
+            <li><a href="/destaques" class="nav-link">Destaques</a></li>
             <li><a href="/mercados" class="nav-link">Mercados</a></li>
             <li><a href="/economia" class="nav-link">Economia</a></li>
             <li><a href="/politica" class="nav-link">Política</a></li>
             <li><a href="/tecnologia" class="nav-link">Tecnologia</a></li>
             <li><a href="/energia" class="nav-link">Energia</a></li>
-            <li><a href="/commodities" class="nav-link">Commodities</a></li>
-            <li><a href="/currencies" class="nav-link">Moedas</a></li>
-            <li><a href="/bonds" class="nav-link">Títulos</a></li>
         </ul>
         <div class="nav-search">
             <input type="search" placeholder="Buscar...">
@@ -37,68 +57,37 @@
         </div>
     </nav>
 
-    <!-- Mercados em Tempo Real -->
-    <div class="markets-bar">
-        <div class="market-item">
-            <span>Ibovespa</span>
-            <span class="market-value">120.000</span>
-            <span class="market-change positive">+1.2%</span>
-        </div>
-        <div class="market-item">
-            <span>Dólar</span>
-            <span class="market-value">5.20</span>
-            <span class="market-change negative">-0.5%</span>
-        </div>
-        <div class="market-item">
-            <span>Bitcoin</span>
-            <span class="market-value">45.000</span>
-            <span class="market-change positive">+2.3%</span>
-        </div>
-        <div class="market-item">
-            <span>Petróleo</span>
-            <span class="market-value">75.50</span>
-            <span class="market-change positive">+0.8%</span>
-        </div>
-    </div>
-
-    <!-- Conteúdo do Post -->
+    <!-- Conteúdo da Notícia -->
     <main class="post-content">
         <article class="post">
-            <header class="post-header">
-                <h1 class="post-title">{{ page.title }}</h1>
+            <div class="post-header">
+                <h1 class="post-title"><?php echo htmlspecialchars($post['title']); ?></h1>
                 <div class="post-meta">
-                    <span class="post-date">{{ page.date | date: "%d/%m/%Y" }}</span>
-                    <span class="post-author">Por {{ page.author }}</span>
-                    <span class="post-category">{{ page.categories | first | capitalize }}</span>
+                    <span class="post-author">Por <?php echo htmlspecialchars($post['author']); ?></span>
+                    <span class="post-date"><?php echo date('d \d\e F \d\e Y', strtotime($post['date'])); ?></span>
                 </div>
-            </header>
-
-            {% if page.image %}
-            <img src="{{ page.image }}" alt="{{ page.title }}" class="post-image">
-            {% endif %}
-
-            <div class="post-body">
-                {{ content }}
+                <div class="post-tags">
+                    <?php foreach ($post['tags'] as $tag): ?>
+                        <span class="post-tag <?php echo strtolower($tag); ?>"><?php echo htmlspecialchars($tag); ?></span>
+                    <?php endforeach; ?>
+                </div>
             </div>
 
-            <footer class="post-footer">
+            <img src="<?php echo htmlspecialchars($post['image']); ?>" alt="<?php echo htmlspecialchars($post['title']); ?>" class="post-image">
+
+            <div class="post-body">
+                <?php echo $content; ?>
+            </div>
+
+            <div class="post-footer">
                 <div class="post-tags">
-                    {% for tag in page.tags %}
-                    <span class="post-tag">{{ tag }}</span>
-                    {% endfor %}
+                    <?php foreach ($post['tags'] as $tag): ?>
+                        <span class="post-tag <?php echo strtolower($tag); ?>"><?php echo htmlspecialchars($tag); ?></span>
+                    <?php endforeach; ?>
                 </div>
-            </footer>
+            </div>
         </article>
     </main>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <h2>Receba análises exclusivas direto no seu e-mail</h2>
-        <form class="newsletter-form">
-            <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
-            <button type="submit" class="newsletter-button">Inscrever-se</button>
-        </form>
-    </section>
 
     <!-- Footer -->
     <footer class="footer">

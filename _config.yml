@@ -1,8 +1,8 @@
 # Configurações do Site
 title: InvestSavy
 description: Portal líder em notícias financeiras e análises de mercado
-baseurl: ""
-url: "https://investsavy.com.br"
+baseurl: ''
+url: 'https://investsavy.com.br'
 
 # Configurações de Build
 markdown: kramdown
@@ -30,11 +30,11 @@ categories:
 # Configurações de Layout
 defaults:
   - scope:
-      path: ""
-      type: "posts"
+      path: ''
+      type: 'posts'
     values:
-      layout: "post"
-      author: "Equipe InvestSavy"
+      layout: 'post'
+      author: 'Equipe InvestSavy'
       comments: true
 
 # Configurações de Exclusão
@@ -58,7 +58,7 @@ seo:
   keywords: investimentos, finanças, mercado, economia, bolsa de valores
   author: InvestSavy
   twitter:
-    username: @investsavy
+    username: '@investsavy'
     card: summary_large_image
 
 # Configurações de servidor

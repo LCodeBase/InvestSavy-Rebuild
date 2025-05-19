@@ -3,7 +3,7 @@ layout: post
 title: 'Mercado financeiro reage positivamente às novas medidas econômicas'
 date: 2025-05-10 00:20:00 -0300
 categories: economia
-tags: [economia, politica]
+tags: [mercado, economia, banco central, investimentos]
 author: 'Equipe InvestSavy'
 image: /assets/images/posts/mercado-medidas-economicas.jpg
 excerpt: 'Análise completa do impacto das recentes decisões do Banco Central no mercado brasileiro'

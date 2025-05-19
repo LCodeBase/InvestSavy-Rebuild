@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Redireciona /noticia/[slug] para noticia.php?slug=[slug]
+RewriteRule ^noticia/([^/]+)/?$ noticia.php?slug=$1 [L,QSA]
+
+# Redireciona /_posts para _posts/index.php
+RewriteRule ^_posts/?$ _posts/index.php [L]
+
+# Redireciona todas as outras requisições para os arquivos existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ $1.php [L]
