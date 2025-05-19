@@ -12,13 +12,14 @@ title: Destaques
     href="{{ '/assets/images/Logo1.png' | relative_url }}"
   />
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+  <link rel="stylesheet" href="destaques.css" />
 </section>
 
 <div class="category-container">
   <!-- Grid de Notícias -->
   <div class="news-grid-infomoney">
-    {% assign destaques_posts = site.posts | where: "featured", true %} {% for
-    post in destaques_posts %}
+    {% assign destaques_posts = site.posts | where_exp: "post", "post.categories contains 'Destaque'" | sort: 'date' | reverse %}
+    {% for post in destaques_posts %}
     <a href="{{ post.url | relative_url }}" class="news-card-infomoney">
       <div class="news-image-container">
         <img
