@@ -5,7 +5,7 @@ date: 2025-05-19 13:00:00 -0300
 categories: [Energia, Tecnologia]
 tags: [Tecnologia, Energia, Brasil, Inovação, Elétrica]
 author: Equipe InvestSavy
-image: assets/images/posts/inovacao-brasil.png
+image: assets/images/inovacao-brasil.png
 excerpt: 'O setor elétrico brasileiro adota inteligência artificial, chatbots e novas ferramentas digitais para aumentar eficiência e segurança.'
 ---
 
